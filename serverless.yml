@@ -1,0 +1,55 @@
+service: api-student
+app: student
+org: longtam20015
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: java8
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - { "Fn::GetAtt": [ "roleTable", "Arn" ] }
+
+plugins:
+  - serverless-offline
+package:
+  artifact: build/distributions/hello.zip
+
+functions:
+  createRole:
+    handler: com.serverless.handler.RoleHandler.CreateRoleHandler
+    events:
+      - http:
+          path: /role
+          method: post
+
+  listRole:
+    handler: com.serverless.handler.RoleHandler.ListRoleHandler
+    events:
+      - http:
+          path: /role
+          method: get
+
+resources:
+  Resources:
+    roleTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: role_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

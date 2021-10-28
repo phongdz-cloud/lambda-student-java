@@ -1,0 +1,29 @@
+com/serverless/dao/Impl/RoleDAO.java
+ com.serverless.dao.Impl.RoleDAO
+com/serverless/service/IRoleService.java
+ com.serverless.service.IRoleService
+com/serverless/response/Response.java
+ com.serverless.response.Response
+com/serverless/connection/DynamoDBAdapter.java
+ com.serverless.connection.DynamoDBAdapter
+com/serverless/dao/GenericDAO.java
+ com.serverless.dao.GenericDAO
+com/serverless/model/User.java
+ com.serverless.model.User
+com/serverless/handler/RoleHandler/CreateRoleHandler.java
+ com.serverless.handler.RoleHandler.CreateRoleHandler
+com/serverless/response/ApiGatewayResponse.java
+ com.serverless.response.ApiGatewayResponse
+ com.serverless.response.ApiGatewayResponse$Builder
+com/serverless/constant/Constant.java
+ com.serverless.constant.Constant
+com/serverless/service/Impl/RoleService.java
+ com.serverless.service.Impl.RoleService
+com/serverless/model/Role.java
+ com.serverless.model.Role
+com/serverless/dao/Impl/AbstractDAO.java
+ com.serverless.dao.Impl.AbstractDAO
+com/serverless/dao/IRoleDAO.java
+ com.serverless.dao.IRoleDAO
+com/serverless/handler/RoleHandler/ListRoleHandler.java
+ com.serverless.handler.RoleHandler.ListRoleHandler
