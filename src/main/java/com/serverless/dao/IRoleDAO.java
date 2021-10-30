@@ -7,5 +7,7 @@ public interface IRoleDAO extends GenericDAO<Role> {
 
   List<Role> findAll();
 
+  Role findRoleByName(String name);
+
   String save(Role role);
 }

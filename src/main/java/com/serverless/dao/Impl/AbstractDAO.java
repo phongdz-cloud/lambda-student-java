@@ -6,10 +6,12 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import com.serverless.connection.DynamoDBAdapter;
 import com.serverless.dao.GenericDAO;
+import com.serverless.model.Role;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,9 +25,14 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 
   private final DynamoDBMapper mapper;
 
+
   public AbstractDAO() {
     this.mapper = DynamoDBAdapter.getInstance()
         .createDbMapper(DynamoDBMapperConfig.builder().build());
+  }
+
+  public DynamoDBMapper getMapper() {
+    return mapper;
   }
 
   public void setType(Class<T> type) {

@@ -2,10 +2,16 @@ com/serverless/dao/Impl/RoleDAO.java
  com.serverless.dao.Impl.RoleDAO
 com/serverless/service/IRoleService.java
  com.serverless.service.IRoleService
-com/serverless/response/Response.java
- com.serverless.response.Response
+com/serverless/handler/RoleHandler/ListRoleHandler.java
+ com.serverless.handler.RoleHandler.ListRoleHandler
+com/serverless/service/IUserService.java
+ com.serverless.service.IUserService
+com/serverless/util/JWTUtil.java
+ com.serverless.util.JWTUtil
 com/serverless/connection/DynamoDBAdapter.java
  com.serverless.connection.DynamoDBAdapter
+com/serverless/handler/UserHandler/LoginUserHandler.java
+ com.serverless.handler.UserHandler.LoginUserHandler
 com/serverless/dao/GenericDAO.java
  com.serverless.dao.GenericDAO
 com/serverless/model/User.java
@@ -15,15 +21,27 @@ com/serverless/handler/RoleHandler/CreateRoleHandler.java
 com/serverless/response/ApiGatewayResponse.java
  com.serverless.response.ApiGatewayResponse
  com.serverless.response.ApiGatewayResponse$Builder
+com/serverless/handler/UserHandler/ListUserHandler.java
+ com.serverless.handler.UserHandler.ListUserHandler
 com/serverless/constant/Constant.java
  com.serverless.constant.Constant
 com/serverless/service/Impl/RoleService.java
  com.serverless.service.Impl.RoleService
+com/serverless/dao/IUserDAO.java
+ com.serverless.dao.IUserDAO
+com/serverless/handler/UserHandler/GetUserHandler.java
+ com.serverless.handler.UserHandler.GetUserHandler
 com/serverless/model/Role.java
  com.serverless.model.Role
+com/serverless/dao/Impl/UserDAO.java
+ com.serverless.dao.Impl.UserDAO
+com/serverless/handler/UserHandler/CreateUserHandler.java
+ com.serverless.handler.UserHandler.CreateUserHandler
 com/serverless/dao/Impl/AbstractDAO.java
  com.serverless.dao.Impl.AbstractDAO
 com/serverless/dao/IRoleDAO.java
  com.serverless.dao.IRoleDAO
-com/serverless/handler/RoleHandler/ListRoleHandler.java
- com.serverless.handler.RoleHandler.ListRoleHandler
+com/serverless/service/Impl/UserService.java
+ com.serverless.service.Impl.UserService
+com/serverless/response/Response.java
+ com.serverless.response.Response

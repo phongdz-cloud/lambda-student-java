@@ -17,6 +17,11 @@ public class RoleService implements IRoleService {
   }
 
   @Override
+  public Role findRoleByName(String name) {
+    return roleDAO.findRoleByName(name);
+  }
+
+  @Override
   public String save(Role role) {
 
     return roleDAO.save(role);

@@ -28,6 +28,19 @@ public class RoleDAO extends AbstractDAO<Role> implements IRoleDAO {
   }
 
   @Override
+  public Role findRoleByName(String name) {
+    List<Role> roles = query();
+    if (roles.size() > 0) {
+      for (Role role : roles) {
+        if (role.getName().equals(name)) {
+          return role;
+        }
+      }
+    }
+    return null;
+  }
+
+  @Override
   public String save(Role role) {
     insert(role);
     logger.info("Role - save(): " + role.toString());

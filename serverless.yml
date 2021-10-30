@@ -17,6 +17,7 @@ provider:
         - dynamodb:DeleteItem
       Resource:
         - { "Fn::GetAtt": [ "roleTable", "Arn" ] }
+        - { "Fn::GetAtt": [ "userTable", "Arn" ] }
 
 plugins:
   - serverless-offline
@@ -37,6 +38,30 @@ functions:
       - http:
           path: /role
           method: get
+  createUser:
+    handler: com.serverless.handler.UserHandler.CreateUserHandler
+    events:
+      - http:
+          path: /user
+          method: post
+  listUser:
+    handler: com.serverless.handler.UserHandler.ListUserHandler
+    events:
+      - http:
+          path: /user
+          method: get
+  getUserByUsername:
+    handler: com.serverless.handler.UserHandler.GetUserHandler
+    events:
+      - http:
+          path: /user/{id}
+          method: get
+  loginUser:
+    handler: com.serverless.handler.UserHandler.LoginUserHandler
+    events:
+      - http:
+          path: /user/login
+          method: post
 
 resources:
   Resources:
@@ -44,6 +69,19 @@ resources:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: role_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    userTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: user_table
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S
