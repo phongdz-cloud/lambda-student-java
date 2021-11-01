@@ -26,7 +26,7 @@ public class ListUserHandler implements RequestHandler<ApiGatewayRequest, ApiGat
           .build();
     } catch (Exception ex) {
       logger.error("Error in list! " + ex);
-      Response response = new Response("Error in list User: ", (Map<String, Object>) input);
+      Response response = new Response("Error in list User: ",  input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)

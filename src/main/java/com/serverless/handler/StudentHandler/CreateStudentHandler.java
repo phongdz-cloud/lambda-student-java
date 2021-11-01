@@ -34,7 +34,7 @@ public class CreateStudentHandler implements
     } catch (Exception ex) {
       logger.error("Error in tour code! " + ex.getMessage());
       Response responseBody = new Response("Error in saving Student! " + ex.getMessage(),
-          (Map<String, Object>) input);
+           input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
           .setObjectBody(responseBody)

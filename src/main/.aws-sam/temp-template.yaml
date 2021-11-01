@@ -1,0 +1,9 @@
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 300
+      MemorySize: 128
+      Handler: com.serverless.handler.StudentHandler.ListStudentHandler
+      CodeUri: C:\Users\dell\Desktop\myServerlessProject
+      Runtime: java8.al2

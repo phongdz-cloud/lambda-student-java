@@ -29,6 +29,8 @@ com/serverless/response/ApiGatewayRequest.java
  com.serverless.response.ApiGatewayRequest
 com/serverless/handler/StudentHandler/ListStudentHandler.java
  com.serverless.handler.StudentHandler.ListStudentHandler
+com/serverless/handler/StudentHandler/DeleteStudentHandler.java
+ com.serverless.handler.StudentHandler.DeleteStudentHandler
 com/serverless/connection/DynamoDBAdapter.java
  com.serverless.connection.DynamoDBAdapter
 com/serverless/handler/UserHandler/LoginUserHandler.java
@@ -41,6 +43,8 @@ com/serverless/service/IStudentService.java
  com.serverless.service.IStudentService
 com/serverless/handler/RoleHandler/CreateRoleHandler.java
  com.serverless.handler.RoleHandler.CreateRoleHandler
+com/serverless/handler/StudentHandler/UpdateStudentHandler.java
+ com.serverless.handler.StudentHandler.UpdateStudentHandler
 com/serverless/constant/Constant.java
  com.serverless.constant.Constant
 com/serverless/service/Impl/RoleService.java

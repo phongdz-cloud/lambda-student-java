@@ -13,5 +13,5 @@ public interface IStudentService {
 
   String update(String id, Student student);
 
-  String delete(String id);
+  String delete(Student student);
 }

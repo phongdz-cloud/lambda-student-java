@@ -25,7 +25,7 @@ public class LoginUserHandler implements RequestHandler<ApiGatewayRequest, ApiGa
       ObjectMapper mapper = new ObjectMapper();
       User user = mapper.readValue(input.getBody(), User.class);
       if (userService.existsUserByUsernameAndPassword(user)) {
-        Response responseBody = new Response("Login success!", (Map<String, Object>) input);
+        Response responseBody = new Response("Login success!",  input);
         responseBody.setSuccess(Boolean.TRUE);
         responseBody.setToken(
             JWTUtil.createJWT(user.getId(), user.getUsername(), user.getPassword(), 1L));
@@ -41,7 +41,7 @@ public class LoginUserHandler implements RequestHandler<ApiGatewayRequest, ApiGa
       }
     } catch (Exception ex) {
       logger.error("Thrown Exception: " + ex.getMessage());
-      Response response = new Response("Error login user: ", (Map<String, Object>) input);
+      Response response = new Response("Error login user: ",  input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)

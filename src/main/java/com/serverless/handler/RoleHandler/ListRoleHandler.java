@@ -25,7 +25,7 @@ public class ListRoleHandler implements RequestHandler<ApiGatewayRequest, ApiGat
           .build();
     } catch (Exception e) {
       logger.error("Error in listing roles: " + e);
-      Response responseBody = new Response("Error in listing role! ", (Map<String, Object>) input);
+      Response responseBody = new Response("Error in listing role! ",  input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
           .setObjectBody(responseBody)

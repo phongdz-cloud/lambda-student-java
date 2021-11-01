@@ -14,6 +14,9 @@ public class StudentDAO extends AbstractDAO<Student> implements IStudentDAO {
 
   private Logger logger = Logger.getLogger(this.getClass());
 
+  private static StudentDAO studentDAO = null;
+
+
   public static StudentDAO getInstance() {
     if (studentDAO == null) {
       studentDAO = new StudentDAO();
@@ -22,13 +25,19 @@ public class StudentDAO extends AbstractDAO<Student> implements IStudentDAO {
     return studentDAO;
   }
 
+
   @Override
   public List<Student> findAll() {
-    List<Student> students = query();
-    for (Student student : students) {
-      logger.info("Student - list()" + student.toString());
+    try {
+      List<Student> students = query();
+      for (Student student : students) {
+        logger.info("Student - list()" + student.toString());
+      }
+      return students;
+    } catch (Exception ex) {
+      logger.debug("Student getList error! DAO: " + ex.getMessage());
+      return null;
     }
-    return students;
   }
 
   @Override
@@ -48,8 +57,6 @@ public class StudentDAO extends AbstractDAO<Student> implements IStudentDAO {
     }
     return student;
   }
-
-  private static StudentDAO studentDAO = null;
 
 
   @Override
@@ -75,11 +82,16 @@ public class StudentDAO extends AbstractDAO<Student> implements IStudentDAO {
   }
 
   @Override
-  public String delete(String id) {
+  public String delete(Student student) {
     try {
-      delete(id);
-      logger.debug("Student - get(): Student - Delete failed!");
-      return id;
+      logger.debug("Student Dao Alive Code!");
+      if (remove(student) != null) {
+        logger.debug("Student - get(): Student - Delete failed!");
+        return student.getId();
+      } else {
+        logger.info("Delete failed!");
+        return null;
+      }
     } catch (Exception ex) {
       logger.debug("Student - get(): Student - Delete failed!");
       return null;

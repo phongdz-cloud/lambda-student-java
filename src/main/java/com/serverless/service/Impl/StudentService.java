@@ -5,8 +5,10 @@ import com.serverless.dao.Impl.StudentDAO;
 import com.serverless.model.Student;
 import com.serverless.service.IStudentService;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 public class StudentService implements IStudentService {
+  private Logger logger = Logger.getLogger(this.getClass());
 
   private IStudentDAO studentDAO = StudentDAO.getInstance();
 
@@ -31,7 +33,8 @@ public class StudentService implements IStudentService {
   }
 
   @Override
-  public String delete(String id) {
-    return studentDAO.delete(id);
+  public String delete(Student student) {
+    logger.debug("Student service Alive!");
+    return studentDAO.delete(student);
   }
 }

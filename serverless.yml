@@ -20,11 +20,13 @@ provider:
       Resource:
         - { "Fn::GetAtt": [ "roleTable", "Arn" ] }
         - { "Fn::GetAtt": [ "userTable", "Arn" ] }
+        - { "Fn::GetAtt": [ "studentTable", "Arn" ] }
 
 plugins:
   - serverless-offline
 package:
   artifact: build/distributions/hello.zip
+#Lambda Role
 
 functions:
   createRole:
@@ -49,8 +51,9 @@ functions:
       - http:
           path: /user
           method: post
+  #Lambda Role
 
-
+  #Lambda User
   listUser:
     handler: com.serverless.handler.UserHandler.ListUserHandler
     events:
@@ -71,6 +74,42 @@ functions:
       - http:
           path: /user/login
           method: post
+  #Lambda User
+
+  #Lambda Student
+  createStudent:
+    handler: com.serverless.handler.StudentHandler.CreateStudentHandler
+    events:
+      - http:
+          path: /student
+          method: post
+  listStudent:
+    handler: com.serverless.handler.StudentHandler.ListStudentHandler
+    events:
+      - http:
+          path: /student
+          method: get
+
+  getStudent:
+    handler: com.serverless.handler.StudentHandler.GetStudentHandler
+    events:
+      - http:
+          path: /student/{id}
+          method: get
+
+  updateStudent:
+    handler: com.serverless.handler.StudentHandler.UpdateStudentHandler
+    events:
+      - http:
+          path: /student
+          method: put
+  deleteStudentHandler:
+    handler: com.serverless.handler.StudentHandler.DeleteStudentHandler
+    events:
+      - http:
+          path: /student/{id}
+          method: delete
+#Lambda Student
 
 resources:
   Resources:
@@ -91,6 +130,19 @@ resources:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: user_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    studentTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: student_table
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S

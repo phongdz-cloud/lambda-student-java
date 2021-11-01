@@ -40,12 +40,12 @@ public class CreateUserHandler implements RequestHandler<ApiGatewayRequest, ApiG
             .build();
       } else {
         logger.info("User exists!");
-        responseBody = new Response("Username exists!", (Map<String, Object>) input);
+        responseBody = new Response("Username exists!",  input);
       }
     } catch (Exception e) {
       logger.error("Error in saving user: " + e.getMessage());
       responseBody = new Response("Error in saving User!" + e.getMessage(),
-          (Map<String, Object>) input);
+           input);
     }
     return ApiGatewayResponse.builder()
         .setStatusCode(Constant.ERROR)

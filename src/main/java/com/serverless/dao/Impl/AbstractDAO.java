@@ -6,12 +6,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
-import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import com.serverless.connection.DynamoDBAdapter;
 import com.serverless.dao.GenericDAO;
-import com.serverless.model.Role;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -84,16 +82,16 @@ public class AbstractDAO<T> implements GenericDAO<T> {
   }
 
   @Override
-  public Boolean delete(T object, String id) {
-    object = (T) query(object, id);
+  public String remove(T object) {
+    logger.info("AbstractDao Alive Code!");
     if (object != null) {
       logger.info("delete(): " + object.toString());
       this.mapper.delete(object);
     } else {
       logger.info("delete(): does not exists!");
-      return false;
+      return object.toString();
     }
-    return true;
+    return null;
   }
 
   private DynamoDBSaveExpression buildExpression(String id) {

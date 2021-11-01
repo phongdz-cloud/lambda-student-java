@@ -38,7 +38,7 @@ public class GetUserHandler implements RequestHandler<ApiGatewayRequest, ApiGate
     } catch (Exception ex) {
       logger.error("Error in retrieving user: " + ex.getMessage());
       Response responseBody = new Response("Error in retrieving user: ",
-          (Map<String, Object>) input);
+           input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
           .setObjectBody(responseBody)

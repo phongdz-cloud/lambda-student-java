@@ -10,7 +10,6 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IRoleService;
 import com.serverless.service.Impl.RoleService;
-import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class CreateRoleHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -30,7 +29,7 @@ public class CreateRoleHandler implements RequestHandler<ApiGatewayRequest, ApiG
           .build();
     } catch (Exception e) {
       logger.error("Error in saving role: " + e);
-      Response responseBody = new Response("Error in saving Role!", (Map<String, Object>) input);
+      Response responseBody = new Response("Error in saving Role!", input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
           .setObjectBody(responseBody)

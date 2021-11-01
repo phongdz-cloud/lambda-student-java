@@ -13,5 +13,5 @@ public interface IStudentDAO extends GenericDAO<Student> {
 
   String update(String id, Student student);
 
-  String delete(String id);
+  String delete(Student student);
 }

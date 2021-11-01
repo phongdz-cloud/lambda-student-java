@@ -10,6 +10,6 @@ public interface GenericDAO<T> {
 
   void update(T object, String id);
 
-  Boolean delete(T object, String id);
+  String remove(T object);
 
 }
