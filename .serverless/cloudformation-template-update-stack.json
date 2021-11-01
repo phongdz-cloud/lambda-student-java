@@ -292,7 +292,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635569509630-2021-10-30T04:51:49.630Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635766397329-2021-11-01T11:33:17.329Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.RoleHandler.CreateRoleHandler",
         "Runtime": "java8",
@@ -317,7 +317,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635569509630-2021-10-30T04:51:49.630Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635766397329-2021-11-01T11:33:17.329Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.RoleHandler.ListRoleHandler",
         "Runtime": "java8",
@@ -342,7 +342,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635569509630-2021-10-30T04:51:49.630Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635766397329-2021-11-01T11:33:17.329Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.CreateUserHandler",
         "Runtime": "java8",
@@ -367,7 +367,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635569509630-2021-10-30T04:51:49.630Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635766397329-2021-11-01T11:33:17.329Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.ListUserHandler",
         "Runtime": "java8",
@@ -392,7 +392,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635569509630-2021-10-30T04:51:49.630Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635766397329-2021-11-01T11:33:17.329Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.GetUserHandler",
         "Runtime": "java8",
@@ -417,7 +417,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635569509630-2021-10-30T04:51:49.630Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635766397329-2021-11-01T11:33:17.329Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.LoginUserHandler",
         "Runtime": "java8",
@@ -435,64 +435,64 @@
         "LoginUserLogGroup"
       ]
     },
-    "CreateUserLambdaVersionkCNX4OMBNxsvrV9ECBuOIkeQkjbZHVhqKY2uxXC7s": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "CreateUserLambdaFunction"
-        },
-        "CodeSha256": "rf0B8M+G1Tni3sBHNGxK5vX3O2HGnc2hSqkNC+i5fb8="
-      }
-    },
-    "ListUserLambdaVersioneds4AffOGy08a16vzWFYzaGDBlCZ5dYmJ53GgacoI": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "ListUserLambdaFunction"
-        },
-        "CodeSha256": "rf0B8M+G1Tni3sBHNGxK5vX3O2HGnc2hSqkNC+i5fb8="
-      }
-    },
-    "ListRoleLambdaVersionL1uhIFtpxBEuezgoYXiUvNnF0usIcGVSd7gaXSYp8g": {
+    "ListRoleLambdaVersionAydLXRLV534b3umdrweAo2Ugbh5sDgIMOUf8gn6kUw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListRoleLambdaFunction"
         },
-        "CodeSha256": "rf0B8M+G1Tni3sBHNGxK5vX3O2HGnc2hSqkNC+i5fb8="
+        "CodeSha256": "S4lxEsFYTRdg0YT9DVDUHJTHsGSfaAvAtl5VFwkkLCk="
       }
     },
-    "LoginUserLambdaVersionaRQC4wogtuna5zfRtJcjVWxKVtfLxgkOo9hOQUkyzo": {
+    "ListUserLambdaVersionuqk7caQVbpJrqpaDH034ImKCXX0TsElOqhjfis4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "LoginUserLambdaFunction"
+          "Ref": "ListUserLambdaFunction"
         },
-        "CodeSha256": "rf0B8M+G1Tni3sBHNGxK5vX3O2HGnc2hSqkNC+i5fb8="
+        "CodeSha256": "S4lxEsFYTRdg0YT9DVDUHJTHsGSfaAvAtl5VFwkkLCk="
       }
     },
-    "CreateRoleLambdaVersionTh9zyveyITV2b0OcgD3JF3gBgc7Pa8wXS1CrvJZd2A": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "CreateRoleLambdaFunction"
-        },
-        "CodeSha256": "rf0B8M+G1Tni3sBHNGxK5vX3O2HGnc2hSqkNC+i5fb8="
-      }
-    },
-    "GetUserByUsernameLambdaVersion9iGdbs1M13V4Auoysl7EITHu6GHpbTw98y8DMN9N9iU": {
+    "GetUserByUsernameLambdaVersion1mCrpmiFzg9dbE2zjZ5VFMscLh4ZCxJVe2vTZRScyA4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetUserByUsernameLambdaFunction"
         },
-        "CodeSha256": "rf0B8M+G1Tni3sBHNGxK5vX3O2HGnc2hSqkNC+i5fb8="
+        "CodeSha256": "S4lxEsFYTRdg0YT9DVDUHJTHsGSfaAvAtl5VFwkkLCk="
+      }
+    },
+    "CreateRoleLambdaVersionWxL7tP6a6i0ErDEweQJvhSlqyBEsNDmfO61zLglo": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateRoleLambdaFunction"
+        },
+        "CodeSha256": "S4lxEsFYTRdg0YT9DVDUHJTHsGSfaAvAtl5VFwkkLCk="
+      }
+    },
+    "LoginUserLambdaVersion9L7hkPpu7GjwaKxqOvoqVbQ4pC8ioYI5nBEpXEqyK8": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "LoginUserLambdaFunction"
+        },
+        "CodeSha256": "S4lxEsFYTRdg0YT9DVDUHJTHsGSfaAvAtl5VFwkkLCk="
+      }
+    },
+    "CreateUserLambdaVersionHxkhmvqvShePfvJYf5XrgEhwWYXZzuOTRJvl6ko": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateUserLambdaFunction"
+        },
+        "CodeSha256": "S4lxEsFYTRdg0YT9DVDUHJTHsGSfaAvAtl5VFwkkLCk="
       }
     },
     "ApiGatewayRestApi": {
@@ -837,7 +837,7 @@
         "LoginUserLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1635569501663": {
+    "ApiGatewayDeployment1635766389506": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1185,7 +1185,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635569509630-2021-10-30T04:51:49.630Z/custom-resources.zip"
+          "S3Key": "serverless/api-student/dev/1635766397329-2021-11-01T11:33:17.329Z/custom-resources.zip"
         },
         "FunctionName": "api-student-dev-custom-resource-apigw-cw-role",
         "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -1338,58 +1338,58 @@
         "Name": "sls-api-student-dev-EnterpriseLogAccessIamRole"
       }
     },
-    "CreateUserLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "CreateUserLambdaVersionkCNX4OMBNxsvrV9ECBuOIkeQkjbZHVhqKY2uxXC7s"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-CreateUserLambdaFunctionQualifiedArn"
-      }
-    },
-    "ListUserLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "ListUserLambdaVersioneds4AffOGy08a16vzWFYzaGDBlCZ5dYmJ53GgacoI"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-ListUserLambdaFunctionQualifiedArn"
-      }
-    },
     "ListRoleLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListRoleLambdaVersionL1uhIFtpxBEuezgoYXiUvNnF0usIcGVSd7gaXSYp8g"
+        "Ref": "ListRoleLambdaVersionAydLXRLV534b3umdrweAo2Ugbh5sDgIMOUf8gn6kUw"
       },
       "Export": {
         "Name": "sls-api-student-dev-ListRoleLambdaFunctionQualifiedArn"
       }
     },
-    "LoginUserLambdaFunctionQualifiedArn": {
+    "ListUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "LoginUserLambdaVersionaRQC4wogtuna5zfRtJcjVWxKVtfLxgkOo9hOQUkyzo"
+        "Ref": "ListUserLambdaVersionuqk7caQVbpJrqpaDH034ImKCXX0TsElOqhjfis4"
       },
       "Export": {
-        "Name": "sls-api-student-dev-LoginUserLambdaFunctionQualifiedArn"
-      }
-    },
-    "CreateRoleLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "CreateRoleLambdaVersionTh9zyveyITV2b0OcgD3JF3gBgc7Pa8wXS1CrvJZd2A"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-CreateRoleLambdaFunctionQualifiedArn"
+        "Name": "sls-api-student-dev-ListUserLambdaFunctionQualifiedArn"
       }
     },
     "GetUserByUsernameLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetUserByUsernameLambdaVersion9iGdbs1M13V4Auoysl7EITHu6GHpbTw98y8DMN9N9iU"
+        "Ref": "GetUserByUsernameLambdaVersion1mCrpmiFzg9dbE2zjZ5VFMscLh4ZCxJVe2vTZRScyA4"
       },
       "Export": {
         "Name": "sls-api-student-dev-GetUserByUsernameLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateRoleLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateRoleLambdaVersionWxL7tP6a6i0ErDEweQJvhSlqyBEsNDmfO61zLglo"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateRoleLambdaFunctionQualifiedArn"
+      }
+    },
+    "LoginUserLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "LoginUserLambdaVersion9L7hkPpu7GjwaKxqOvoqVbQ4pC8ioYI5nBEpXEqyK8"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-LoginUserLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateUserLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateUserLambdaVersionHxkhmvqvShePfvJYf5XrgEhwWYXZzuOTRJvl6ko"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateUserLambdaFunctionQualifiedArn"
       }
     },
     "ServiceEndpoint": {

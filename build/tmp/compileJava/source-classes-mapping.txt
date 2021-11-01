@@ -1,13 +1,34 @@
-com/serverless/dao/Impl/RoleDAO.java
- com.serverless.dao.Impl.RoleDAO
+com/serverless/util/HttpUtil.java
+ com.serverless.util.HttpUtil
 com/serverless/service/IRoleService.java
  com.serverless.service.IRoleService
+com/serverless/dao/IStudentDAO.java
+ com.serverless.dao.IStudentDAO
+com/serverless/util/JWTUtil.java
+ com.serverless.util.JWTUtil
+com/serverless/service/Impl/StudentService.java
+ com.serverless.service.Impl.StudentService
+com/serverless/response/ApiGatewayResponse.java
+ com.serverless.response.ApiGatewayResponse
+ com.serverless.response.ApiGatewayResponse$Builder
+com/serverless/handler/UserHandler/ListUserHandler.java
+ com.serverless.handler.UserHandler.ListUserHandler
+com/serverless/model/Student.java
+ com.serverless.model.Student
+com/serverless/dao/Impl/UserDAO.java
+ com.serverless.dao.Impl.UserDAO
+com/serverless/handler/StudentHandler/CreateStudentHandler.java
+ com.serverless.handler.StudentHandler.CreateStudentHandler
+com/serverless/dao/Impl/RoleDAO.java
+ com.serverless.dao.Impl.RoleDAO
 com/serverless/handler/RoleHandler/ListRoleHandler.java
  com.serverless.handler.RoleHandler.ListRoleHandler
 com/serverless/service/IUserService.java
  com.serverless.service.IUserService
-com/serverless/util/JWTUtil.java
- com.serverless.util.JWTUtil
+com/serverless/response/ApiGatewayRequest.java
+ com.serverless.response.ApiGatewayRequest
+com/serverless/handler/StudentHandler/ListStudentHandler.java
+ com.serverless.handler.StudentHandler.ListStudentHandler
 com/serverless/connection/DynamoDBAdapter.java
  com.serverless.connection.DynamoDBAdapter
 com/serverless/handler/UserHandler/LoginUserHandler.java
@@ -16,13 +37,10 @@ com/serverless/dao/GenericDAO.java
  com.serverless.dao.GenericDAO
 com/serverless/model/User.java
  com.serverless.model.User
+com/serverless/service/IStudentService.java
+ com.serverless.service.IStudentService
 com/serverless/handler/RoleHandler/CreateRoleHandler.java
  com.serverless.handler.RoleHandler.CreateRoleHandler
-com/serverless/response/ApiGatewayResponse.java
- com.serverless.response.ApiGatewayResponse
- com.serverless.response.ApiGatewayResponse$Builder
-com/serverless/handler/UserHandler/ListUserHandler.java
- com.serverless.handler.UserHandler.ListUserHandler
 com/serverless/constant/Constant.java
  com.serverless.constant.Constant
 com/serverless/service/Impl/RoleService.java
@@ -33,8 +51,10 @@ com/serverless/handler/UserHandler/GetUserHandler.java
  com.serverless.handler.UserHandler.GetUserHandler
 com/serverless/model/Role.java
  com.serverless.model.Role
-com/serverless/dao/Impl/UserDAO.java
- com.serverless.dao.Impl.UserDAO
+com/serverless/handler/StudentHandler/GetStudentHandler.java
+ com.serverless.handler.StudentHandler.GetStudentHandler
+com/serverless/dao/Impl/StudentDAO.java
+ com.serverless.dao.Impl.StudentDAO
 com/serverless/handler/UserHandler/CreateUserHandler.java
  com.serverless.handler.UserHandler.CreateUserHandler
 com/serverless/dao/Impl/AbstractDAO.java

@@ -2,11 +2,11 @@ package com.serverless.handler.UserHandler;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.serverless.constant.Constant;
 import com.serverless.model.Role;
 import com.serverless.model.User;
+import com.serverless.response.ApiGatewayRequest;
 import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IRoleService;
@@ -16,7 +16,7 @@ import com.serverless.service.Impl.UserService;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
-public class CreateUserHandler implements RequestHandler<Map<String, Object>, ApiGatewayResponse> {
+public class CreateUserHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
 
   private final Logger logger = Logger.getLogger(this.getClass());
 
@@ -25,14 +25,12 @@ public class CreateUserHandler implements RequestHandler<Map<String, Object>, Ap
   private IUserService userService = new UserService();
 
   @Override
-  public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
+  public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
     Response responseBody = null;
     try {
-      JsonNode body = new ObjectMapper().readTree((String) input.get("body"));
+      ObjectMapper mapper = new ObjectMapper();
       Role role = roleService.findRoleByName("user");
-      User user = new User();
-      user.setUsername(body.get("username").asText());
-      user.setPassword(body.get("password").asText());
+      User user = mapper.readValue((String) input.getBody(), User.class);
       user.setRole(role);
       if (userService.existsUserByUsername(user.getUsername())) {
         userService.save(user);
@@ -42,11 +40,12 @@ public class CreateUserHandler implements RequestHandler<Map<String, Object>, Ap
             .build();
       } else {
         logger.info("User exists!");
-        responseBody = new Response("Username exists!", input);
+        responseBody = new Response("Username exists!", (Map<String, Object>) input);
       }
     } catch (Exception e) {
       logger.error("Error in saving user: " + e.getMessage());
-      responseBody = new Response("Error in saving User!" + e.getMessage(), input);
+      responseBody = new Response("Error in saving User!" + e.getMessage(),
+          (Map<String, Object>) input);
     }
     return ApiGatewayResponse.builder()
         .setStatusCode(Constant.ERROR)

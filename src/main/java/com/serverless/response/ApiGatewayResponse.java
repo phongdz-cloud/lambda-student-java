@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 public class ApiGatewayResponse {
 
+
   private final int statusCode;
   private final String body;
   private final Map<String, String> headers;
