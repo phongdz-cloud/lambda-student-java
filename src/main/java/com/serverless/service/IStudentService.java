@@ -9,6 +9,8 @@ public interface IStudentService {
 
   Student findStudentById(String id);
 
+  Student findStudentByToken(String token);
+
   String save(Student student);
 
   String update(String id, Student student);

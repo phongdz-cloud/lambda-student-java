@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.serverless.dao.IStudentDAO;
 import com.serverless.model.Student;
+import com.serverless.util.JWTUtil;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,25 @@ public class StudentDAO extends AbstractDAO<Student> implements IStudentDAO {
       logger.debug("Student getList error! DAO: " + ex.getMessage());
       return null;
     }
+  }
+
+  @Override
+  public Student findStudentByToken(String token) {
+    Student student = null;
+    try {
+      String idUser = (String) JWTUtil.decodeJWT(token).get("jti");
+      logger.info("User Id: " + idUser);
+      List<Student> students = findAll();
+      for (Student s : students) {
+        if (s.getUserId().equals(idUser)) {
+          student = findStudentById(s.getId());
+          break;
+        }
+      }
+    } catch (Exception ex) {
+      logger.error("Student error token: " + token);
+    }
+    return student;
   }
 
   @Override

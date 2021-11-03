@@ -97,6 +97,13 @@ functions:
           path: /student/{id}
           method: get
 
+  getStudentTokenHandler:
+    handler: com.serverless.handler.StudentHandler.GetStudentTokenHandler
+    events:
+      - http:
+          path: /student/token
+          method: get
+
   updateStudent:
     handler: com.serverless.handler.StudentHandler.UpdateStudentHandler
     events:

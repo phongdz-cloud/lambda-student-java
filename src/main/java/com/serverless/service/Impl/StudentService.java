@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 public class StudentService implements IStudentService {
+
   private Logger logger = Logger.getLogger(this.getClass());
 
   private IStudentDAO studentDAO = StudentDAO.getInstance();
@@ -20,6 +21,11 @@ public class StudentService implements IStudentService {
   @Override
   public Student findStudentById(String id) {
     return studentDAO.findStudentById(id);
+  }
+
+  @Override
+  public Student findStudentByToken(String token) {
+    return studentDAO.findStudentByToken(token);
   }
 
   @Override

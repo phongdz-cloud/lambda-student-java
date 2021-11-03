@@ -7,6 +7,8 @@ public interface IStudentDAO extends GenericDAO<Student> {
 
   List<Student> findAll();
 
+  Student findStudentByToken(String token);
+
   Student findStudentById(String id);
 
   String save(Student student);

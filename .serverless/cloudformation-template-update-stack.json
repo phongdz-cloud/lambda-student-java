@@ -125,6 +125,12 @@
         "LogGroupName": "/aws/lambda/api-student-dev-getStudent"
       }
     },
+    "GetStudentTokenHandlerLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-getStudentTokenHandler"
+      }
+    },
     "UpdateStudentLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
@@ -333,6 +339,12 @@
                     },
                     {
                       "Fn::GetAtt": [
+                        "GetStudentTokenHandlerLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
                         "UpdateStudentLogGroup",
                         "Arn"
                       ]
@@ -358,7 +370,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.RoleHandler.CreateRoleHandler",
         "Runtime": "java8",
@@ -383,7 +395,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.RoleHandler.ListRoleHandler",
         "Runtime": "java8",
@@ -408,7 +420,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.CreateUserHandler",
         "Runtime": "java8",
@@ -433,7 +445,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.ListUserHandler",
         "Runtime": "java8",
@@ -458,7 +470,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.GetUserHandler",
         "Runtime": "java8",
@@ -483,7 +495,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.LoginUserHandler",
         "Runtime": "java8",
@@ -508,7 +520,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.CreateStudentHandler",
         "Runtime": "java8",
@@ -533,7 +545,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.ListStudentHandler",
         "Runtime": "java8",
@@ -558,7 +570,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.GetStudentHandler",
         "Runtime": "java8",
@@ -576,6 +588,31 @@
         "GetStudentLogGroup"
       ]
     },
+    "GetStudentTokenHandlerLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.StudentHandler.GetStudentTokenHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-getStudentTokenHandler",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetStudentTokenHandlerLogGroup"
+      ]
+    },
     "UpdateStudentLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -583,7 +620,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.UpdateStudentHandler",
         "Runtime": "java8",
@@ -608,7 +645,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.DeleteStudentHandler",
         "Runtime": "java8",
@@ -626,114 +663,124 @@
         "DeleteStudentHandlerLogGroup"
       ]
     },
-    "CreateRoleLambdaVersion3SWYdWxrLYhy0WUzD4dhA5W0o14ufvZ8fJaO4rnE": {
+    "CreateRoleLambdaVersionSzIupiGbu7X2fJZXMUnVU0sAFgb1w0VgCGK9eKoec": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateRoleLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "ListUserLambdaVersionWsPmDvE1bSKLCjGX06dEmNW6V4kziuonHi2DdHcdc": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "ListUserLambdaFunction"
-        },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
-      }
-    },
-    "ListRoleLambdaVersiong4ZEUWZLBsZfzg1PKjJvLdJWEOuPf3aw0hS6ZfKYeBs": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "ListRoleLambdaFunction"
-        },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
-      }
-    },
-    "CreateUserLambdaVersionzTmQjXZ2DacS2qombYDxdebeky5mUCvxRqYslhD28": {
+    "CreateUserLambdaVersion6GdWVs0SPTcBEOIBgG7unu8Vnsaiqm547weOXM83TI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateUserLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "CreateStudentLambdaVersionK1x3aulhN6hwFQu6IvD6O0yORDQxTy1iVF2sT5mJgpM": {
+    "ListRoleLambdaVersion7b5Xz1VKcWEaHjBjCcnB0C9CWm4UtGsvu81ShqO8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "CreateStudentLambdaFunction"
+          "Ref": "ListRoleLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "GetUserByUsernameLambdaVersionbXr5wo28GrmlJQ5ZgHynGJjLT2b7xriq6FoMQqhFlI": {
+    "ListUserLambdaVersion3xvq42AtH2ith6qqgOJDKXD6MrrIFZtPzD8IbnYVXZg": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListUserLambdaFunction"
+        },
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+      }
+    },
+    "GetUserByUsernameLambdaVersionvwOqbH8LgCHWRXNx3SagfQsJMjCfDluU4udqhseet0": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetUserByUsernameLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "LoginUserLambdaVersionZ8lOzCa1x4uo6DdyAgDoQnRAzelhuRYp0cqEtCOhZY": {
+    "CreateStudentLambdaVersionP08jofdzZgQgxZxKpfrDd2Tgl5DisV82oCAX2IcE": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateStudentLambdaFunction"
+        },
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+      }
+    },
+    "LoginUserLambdaVersionNoFUuNansMaGhFpM7G5BvOUiPLH6qQXobPxDevpByDE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "LoginUserLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "ListStudentLambdaVersionxeAQ3khgdsZ0CYNQKjXdyQi3bcXyl99eEomfyQPEg": {
+    "ListStudentLambdaVersionHKPCdjXKNaGWRMwIjkBs4RuefKHW0zTOugepWDCx6kQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListStudentLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "GetStudentLambdaVersionUNTXhmNc9kM6Q4SSCEwHxhfVMQ31FGggfZGhO7MwYSQ": {
+    "GetStudentTokenHandlerLambdaVersionCc7ds5f3NyUXO8H1fFs0R2njcT408mceSdNbjwX9NM": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetStudentTokenHandlerLambdaFunction"
+        },
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+      }
+    },
+    "GetStudentLambdaVersionsONOSRIdtKQVFpBdqSFPxdX3LIuGP0RSLEXX8O2s": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetStudentLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "UpdateStudentLambdaVersionPIOjZH9dwm8XIubREZIs2iCXcJBk2oJe9hoFhmBk": {
+    "UpdateStudentLambdaVersionWLGxvXhrDOYisyt6DCwjp8rL9sXYbvr0EVPKSE0lLs": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateStudentLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
-    "DeleteStudentHandlerLambdaVersionKh171iC4lqCWKdYhxCtFDfol0OTWxCJP8QPn8xuRyo": {
+    "DeleteStudentHandlerLambdaVersionvBCyT4p0D2qZuj5PQ4voZyNXlxucV8rebkhf0mSdI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteStudentHandlerLambdaFunction"
         },
-        "CodeSha256": "L+7BwEUiBGf0OoaaGqk/aVABnhSoOrjbMhXh+5fmr74="
+        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
       }
     },
     "ApiGatewayRestApi": {
@@ -824,6 +871,18 @@
           "Ref": "ApiGatewayResourceStudent"
         },
         "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceStudentToken": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceStudent"
+        },
+        "PathPart": "token",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -1243,6 +1302,52 @@
         "GetStudentLambdaPermissionApiGateway"
       ]
     },
+    "ApiGatewayMethodStudentTokenGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceStudentToken"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetStudentTokenHandlerLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "GetStudentTokenHandlerLambdaPermissionApiGateway"
+      ]
+    },
     "ApiGatewayMethodStudentPut": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
@@ -1335,7 +1440,7 @@
         "DeleteStudentHandlerLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1635851417398": {
+    "ApiGatewayDeployment1635932952211": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1353,6 +1458,7 @@
         "ApiGatewayMethodStudentPost",
         "ApiGatewayMethodStudentGet",
         "ApiGatewayMethodStudentIdVarGet",
+        "ApiGatewayMethodStudentTokenGet",
         "ApiGatewayMethodStudentPut",
         "ApiGatewayMethodStudentIdVarDelete"
       ]
@@ -1690,6 +1796,43 @@
         }
       }
     },
+    "GetStudentTokenHandlerLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetStudentTokenHandlerLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
     "UpdateStudentLambdaPermissionApiGateway": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
@@ -1873,7 +2016,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635851429411-2021-11-02T11:10:29.411Z/custom-resources.zip"
+          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/custom-resources.zip"
         },
         "FunctionName": "api-student-dev-custom-resource-apigw-cw-role",
         "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -2047,6 +2190,16 @@
         }
       }
     },
+    "CWLSubFilterGetStudentTokenHandlerLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "GetStudentTokenHandlerLogGroup"
+        }
+      }
+    },
     "CWLSubFilterUpdateStudentLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
@@ -2101,61 +2254,61 @@
     "CreateRoleLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateRoleLambdaVersion3SWYdWxrLYhy0WUzD4dhA5W0o14ufvZ8fJaO4rnE"
+        "Ref": "CreateRoleLambdaVersionSzIupiGbu7X2fJZXMUnVU0sAFgb1w0VgCGK9eKoec"
       },
       "Export": {
         "Name": "sls-api-student-dev-CreateRoleLambdaFunctionQualifiedArn"
       }
     },
-    "ListUserLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "ListUserLambdaVersionWsPmDvE1bSKLCjGX06dEmNW6V4kziuonHi2DdHcdc"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-ListUserLambdaFunctionQualifiedArn"
-      }
-    },
-    "ListRoleLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "ListRoleLambdaVersiong4ZEUWZLBsZfzg1PKjJvLdJWEOuPf3aw0hS6ZfKYeBs"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-ListRoleLambdaFunctionQualifiedArn"
-      }
-    },
     "CreateUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateUserLambdaVersionzTmQjXZ2DacS2qombYDxdebeky5mUCvxRqYslhD28"
+        "Ref": "CreateUserLambdaVersion6GdWVs0SPTcBEOIBgG7unu8Vnsaiqm547weOXM83TI"
       },
       "Export": {
         "Name": "sls-api-student-dev-CreateUserLambdaFunctionQualifiedArn"
       }
     },
-    "CreateStudentLambdaFunctionQualifiedArn": {
+    "ListRoleLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateStudentLambdaVersionK1x3aulhN6hwFQu6IvD6O0yORDQxTy1iVF2sT5mJgpM"
+        "Ref": "ListRoleLambdaVersion7b5Xz1VKcWEaHjBjCcnB0C9CWm4UtGsvu81ShqO8"
       },
       "Export": {
-        "Name": "sls-api-student-dev-CreateStudentLambdaFunctionQualifiedArn"
+        "Name": "sls-api-student-dev-ListRoleLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListUserLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListUserLambdaVersion3xvq42AtH2ith6qqgOJDKXD6MrrIFZtPzD8IbnYVXZg"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListUserLambdaFunctionQualifiedArn"
       }
     },
     "GetUserByUsernameLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetUserByUsernameLambdaVersionbXr5wo28GrmlJQ5ZgHynGJjLT2b7xriq6FoMQqhFlI"
+        "Ref": "GetUserByUsernameLambdaVersionvwOqbH8LgCHWRXNx3SagfQsJMjCfDluU4udqhseet0"
       },
       "Export": {
         "Name": "sls-api-student-dev-GetUserByUsernameLambdaFunctionQualifiedArn"
       }
     },
+    "CreateStudentLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateStudentLambdaVersionP08jofdzZgQgxZxKpfrDd2Tgl5DisV82oCAX2IcE"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateStudentLambdaFunctionQualifiedArn"
+      }
+    },
     "LoginUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "LoginUserLambdaVersionZ8lOzCa1x4uo6DdyAgDoQnRAzelhuRYp0cqEtCOhZY"
+        "Ref": "LoginUserLambdaVersionNoFUuNansMaGhFpM7G5BvOUiPLH6qQXobPxDevpByDE"
       },
       "Export": {
         "Name": "sls-api-student-dev-LoginUserLambdaFunctionQualifiedArn"
@@ -2164,16 +2317,25 @@
     "ListStudentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListStudentLambdaVersionxeAQ3khgdsZ0CYNQKjXdyQi3bcXyl99eEomfyQPEg"
+        "Ref": "ListStudentLambdaVersionHKPCdjXKNaGWRMwIjkBs4RuefKHW0zTOugepWDCx6kQ"
       },
       "Export": {
         "Name": "sls-api-student-dev-ListStudentLambdaFunctionQualifiedArn"
       }
     },
+    "GetStudentTokenHandlerLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetStudentTokenHandlerLambdaVersionCc7ds5f3NyUXO8H1fFs0R2njcT408mceSdNbjwX9NM"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-GetStudentTokenHandlerLambdaFunctionQualifiedArn"
+      }
+    },
     "GetStudentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetStudentLambdaVersionUNTXhmNc9kM6Q4SSCEwHxhfVMQ31FGggfZGhO7MwYSQ"
+        "Ref": "GetStudentLambdaVersionsONOSRIdtKQVFpBdqSFPxdX3LIuGP0RSLEXX8O2s"
       },
       "Export": {
         "Name": "sls-api-student-dev-GetStudentLambdaFunctionQualifiedArn"
@@ -2182,7 +2344,7 @@
     "UpdateStudentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateStudentLambdaVersionPIOjZH9dwm8XIubREZIs2iCXcJBk2oJe9hoFhmBk"
+        "Ref": "UpdateStudentLambdaVersionWLGxvXhrDOYisyt6DCwjp8rL9sXYbvr0EVPKSE0lLs"
       },
       "Export": {
         "Name": "sls-api-student-dev-UpdateStudentLambdaFunctionQualifiedArn"
@@ -2191,7 +2353,7 @@
     "DeleteStudentHandlerLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteStudentHandlerLambdaVersionKh171iC4lqCWKdYhxCtFDfol0OTWxCJP8QPn8xuRyo"
+        "Ref": "DeleteStudentHandlerLambdaVersionvBCyT4p0D2qZuj5PQ4voZyNXlxucV8rebkhf0mSdI"
       },
       "Export": {
         "Name": "sls-api-student-dev-DeleteStudentHandlerLambdaFunctionQualifiedArn"

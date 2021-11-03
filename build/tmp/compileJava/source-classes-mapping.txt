@@ -1,3 +1,5 @@
+com/serverless/util/BearerToken.java
+ com.serverless.util.BearerToken
 com/serverless/util/HttpUtil.java
  com.serverless.util.HttpUtil
 com/serverless/service/IRoleService.java
@@ -65,6 +67,8 @@ com/serverless/dao/Impl/AbstractDAO.java
  com.serverless.dao.Impl.AbstractDAO
 com/serverless/dao/IRoleDAO.java
  com.serverless.dao.IRoleDAO
+com/serverless/handler/StudentHandler/GetStudentTokenHandler.java
+ com.serverless.handler.StudentHandler.GetStudentTokenHandler
 com/serverless/service/Impl/UserService.java
  com.serverless.service.Impl.UserService
 com/serverless/response/Response.java
