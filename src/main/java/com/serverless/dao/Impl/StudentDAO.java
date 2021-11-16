@@ -106,15 +106,14 @@ public class StudentDAO extends AbstractDAO<Student> implements IStudentDAO {
     try {
       logger.debug("Student Dao Alive Code!");
       if (remove(student) != null) {
-        logger.debug("Student - get(): Student - Delete failed!");
+        logger.debug("Student - get(): Student - Delete success!");
         return student.getId();
       } else {
         logger.info("Delete failed!");
-        return null;
       }
     } catch (Exception ex) {
       logger.debug("Student - get(): Student - Delete failed!");
-      return null;
     }
+    return null;
   }
 }

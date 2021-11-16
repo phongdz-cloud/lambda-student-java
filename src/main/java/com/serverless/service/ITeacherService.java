@@ -9,6 +9,9 @@ public interface ITeacherService {
 
   Teacher findTeacherById(String id);
 
+  Teacher findTeacherByToken(String token);
+
+
   String save(Teacher teacher);
 
   String update(String id, Teacher teacher);

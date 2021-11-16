@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.serverless.dao.ITeacherDAO;
 import com.serverless.model.Teacher;
+import com.serverless.util.JWTUtil;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,6 +53,25 @@ public class TeacherDAO extends AbstractDAO<Teacher> implements ITeacherDAO {
       logger.debug("Teacher - get(): Teacher - " + teacher);
     } else {
       logger.debug("Teacher - get(): Teacher - Not found ");
+    }
+    return teacher;
+  }
+
+  @Override
+  public Teacher findTeacherByToken(String token) {
+    Teacher teacher = null;
+    try {
+      String idUser = (String) JWTUtil.decodeJWT(token).get("jti");
+      logger.info("User id: " + idUser);
+      List<Teacher> teachers = findAll();
+      for (Teacher t : teachers) {
+        if (t.getId().equals(idUser)) {
+          teacher = findTeacherById(t.getId());
+          break;
+        }
+      }
+    } catch (Exception e) {
+      logger.error("Teacher error token: " + token);
     }
     return teacher;
   }

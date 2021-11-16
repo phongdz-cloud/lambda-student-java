@@ -6,6 +6,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import java.io.Serializable;
+import java.util.Objects;
 
 @DynamoDBTable(tableName = "user_table")
 @DynamoDBDocument
@@ -61,5 +62,23 @@ public class User implements Serializable {
         ", password='" + password + '\'' +
         ", role=" + role +
         '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    User user = (User) o;
+    return Objects.equals(username, user.username)
+        && Objects.equals(password, user.password);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, username, password, role);
   }
 }

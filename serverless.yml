@@ -21,6 +21,11 @@ provider:
         - { "Fn::GetAtt": [ "roleTable", "Arn" ] }
         - { "Fn::GetAtt": [ "userTable", "Arn" ] }
         - { "Fn::GetAtt": [ "studentTable", "Arn" ] }
+        - { "Fn::GetAtt": [ "teacherTable", "Arn" ] }
+        - { "Fn::GetAtt": [ "subjectTable", "Arn" ] }
+        - { "Fn::GetAtt": [ "groupTable", "Arn" ] }
+        - { "Fn::GetAtt": [ "scoreTable", "Arn" ] }
+        - { "Fn::GetAtt": [ "examTable", "Arn" ] }
 
 plugins:
   - serverless-offline
@@ -116,8 +121,175 @@ functions:
       - http:
           path: /student/{id}
           method: delete
-#Lambda Student
+  #Lambda Student
+  #Lambda Teacher
+  createTeacher:
+    handler: com.serverless.handler.TeacherHandler.CreateTeacherHandler
+    events:
+      - http:
+          path: /teacher
+          method: post
 
+  listTeacher:
+    handler: com.serverless.handler.TeacherHandler.ListTeacherHandler
+    events:
+      - http:
+          path: /teacher
+          method: get
+
+  getTeacher:
+    handler: com.serverless.handler.TeacherHandler.GetTeacherHandler
+    events:
+      - http:
+          path: /teacher/{id}
+          method: get
+
+  getTeacherTokenHandler:
+    handler: com.serverless.handler.TeacherHandler.GetTeacherTokenHandler
+    events:
+      - http:
+          path: /teacher/token
+          method: get
+
+  deleteTeacherHandler:
+    handler: com.serverless.handler.TeacherHandler.DeleteTeacherHandler
+    events:
+      - http:
+          path: /teacher/{id}
+          method: delete
+
+  updateTeacher:
+    handler: com.serverless.handler.TeacherHandler.UpdateTeacherHandler
+    events:
+      - http:
+          path: /teacher
+          method: put
+  #Lambda Teacher
+
+  #Lambda Subject
+  createSubject:
+    handler: com.serverless.handler.SubjectHandler.CreateSubjectHandler
+    events:
+      - http:
+          path: /subject
+          method: post
+
+  listSubjects:
+    handler: com.serverless.handler.SubjectHandler.ListSubjectHandler
+    events:
+      - http:
+          path: /subject
+          method: get
+
+  #Lambda Subject
+  #Lambda Group
+  createGroup:
+    handler: com.serverless.handler.GroupHandler.CreateGroupHandler
+    events:
+      - http:
+          path: /group
+          method: post
+
+  listGroup:
+    handler: com.serverless.handler.GroupHandler.ListGroupHandler
+    events:
+      - http:
+          path: /group
+          method: get
+
+  listStudentGroups:
+    handler: com.serverless.handler.GroupHandler.ListGroupStudentHandler
+    events:
+      - http:
+          path: /liststudentgroups
+          method: get
+
+  listTeacherGroups:
+    handler: com.serverless.handler.GroupHandler.ListGroupTeacherHandler
+    events:
+      - http:
+          path: /listteachergroups
+          method: get
+
+  listTeacherGroupBySubject:
+    handler: com.serverless.handler.GroupHandler.ListGroupTeacherByIdHandler
+    events:
+      - http:
+          path: /listteachergroups/{id}
+          method: get
+  #Lambda Group
+  #Lambda Score
+  createScore:
+    handler: com.serverless.handler.ScoreHandler.CreateScoreHandler
+    events:
+      - http:
+          path: /score
+          method: post
+
+  listScore:
+    handler: com.serverless.handler.ScoreHandler.ListScoreHandler
+    events:
+      - http:
+          path: /score
+          method: get
+
+  getScore:
+    handler: com.serverless.handler.ScoreHandler.GetScoreHandler
+    events:
+      - http:
+          path: /score/{id}
+          method: get
+
+  updateScore:
+    handler: com.serverless.handler.ScoreHandler.UpdateScoreHandler
+    events:
+      - http:
+          path: /score
+          method: put
+
+  deleteScoreHandler:
+    handler: com.serverless.handler.ScoreHandler.DeleteScoreHandler
+    events:
+      - http:
+          path: /score/{id}
+          method: delete
+  #Lambda Score
+  #Lambda Exam
+  createExam:
+    handler: com.serverless.handler.ExamHandler.CreateExamHandler
+    events:
+      - http:
+          path: /exam
+          method: post
+
+  listExam:
+    handler: com.serverless.handler.ExamHandler.ListExamHandler
+    events:
+      - http:
+          path: /exam
+          method: get
+
+  getExam:
+    handler: com.serverless.handler.ExamHandler.GetExamHandler
+    events:
+      - http:
+          path: /exam/{id}
+          method: get
+
+  updateExam:
+    handler: com.serverless.handler.ExamHandler.UpdateExamHandler
+    events:
+      - http:
+          path: /exam
+          method: put
+
+  deleteExamHandler:
+    handler: com.serverless.handler.ExamHandler.DeleteExamHandler
+    events:
+      - http:
+          path: /exam/{id}
+          method: delete
+  #Lambda Exam
 resources:
   Resources:
     roleTable:
@@ -150,6 +322,71 @@ resources:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: student_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    teacherTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: teacher_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    subjectTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: subject_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    groupTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: group_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    scoreTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: score_table
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    examTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: exam_table
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S

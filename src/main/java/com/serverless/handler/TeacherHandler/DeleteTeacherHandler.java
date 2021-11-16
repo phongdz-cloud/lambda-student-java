@@ -9,6 +9,7 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.ITeacherService;
 import com.serverless.service.Impl.TeacherService;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -23,19 +24,20 @@ public class DeleteTeacherHandler implements RequestHandler<ApiGatewayRequest, A
       Map<String, String> pathParameters = input.getPathParameters();
       String id = pathParameters.get("id");
       Teacher teacher = teacherService.findTeacherById(id);
+      Map<String, Boolean> success = new HashMap<>();
+      int statusCode = Constant.ERROR;
       if (teacher != null) {
         String deleteTeacherId = teacherService.delete(teacher);
+        statusCode = Constant.OK;
         logger.debug("Delete teacher by id: " + deleteTeacherId);
-        return ApiGatewayResponse.builder()
-            .setStatusCode(Constant.OK)
-            .setObjectBody("Delete Successfully!")
-            .build();
-      } else {
-        return ApiGatewayResponse.builder()
-            .setStatusCode(Constant.ERROR)
-            .setObjectBody("Delete failed!")
-            .build();
+        success.put("success",Boolean.TRUE);
+      }else{
+        success.put("success",Boolean.FALSE);
       }
+      return ApiGatewayResponse.builder()
+          .setStatusCode(statusCode)
+          .setObjectBody(success)
+          .build();
     } catch (Exception ex) {
       logger.error("Error in deleted Teacher: ");
       ex.printStackTrace();
@@ -45,6 +47,5 @@ public class DeleteTeacherHandler implements RequestHandler<ApiGatewayRequest, A
           .setObjectBody(response)
           .build();
     }
-
   }
 }

@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.serverless.dao.IUserDAO;
 import com.serverless.model.User;
+import com.serverless.util.HashingUtil;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -72,9 +73,9 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
       List<User> users = query();
       if (users.size() > 0) {
         for (User e : users) {
-          if (e.getUsername().equals(user.getUsername()) && e.getPassword()
-              .equals(user.getPassword())) {
-            user.setId(e.getId());
+          if (e.getUsername().equals(user.getUsername()) && HashingUtil.verifyAndUpdateHash(
+              user.getPassword(), e.getPassword(), e)) {
+            user.setPassword(e.getPassword());
             return true;
           }
         }
@@ -88,6 +89,8 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
 
   @Override
   public String save(User user) {
+    user.setPassword(HashingUtil.hash(user.getPassword()));
+    logger.info(user.getPassword());
     insert(user);
     return user.getId();
   }

@@ -143,6 +143,144 @@
         "LogGroupName": "/aws/lambda/api-student-dev-deleteStudentHandler"
       }
     },
+    "CreateTeacherLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-createTeacher"
+      }
+    },
+    "ListTeacherLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listTeacher"
+      }
+    },
+    "GetTeacherLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-getTeacher"
+      }
+    },
+    "GetTeacherTokenHandlerLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-getTeacherTokenHandler"
+      }
+    },
+    "DeleteTeacherHandlerLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-deleteTeacherHandler"
+      }
+    },
+    "UpdateTeacherLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-updateTeacher"
+      }
+    },
+    "CreateSubjectLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-createSubject"
+      }
+    },
+    "ListSubjectsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listSubjects"
+      }
+    },
+    "CreateGroupLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-createGroup"
+      }
+    },
+    "ListGroupLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listGroup"
+      }
+    },
+    "ListStudentGroupsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listStudentGroups"
+      }
+    },
+    "ListTeacherGroupsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listTeacherGroups"
+      }
+    },
+    "ListTeacherGroupBySubjectLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listTeacherGroupBySubject"
+      }
+    },
+    "CreateScoreLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-createScore"
+      }
+    },
+    "ListScoreLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listScore"
+      }
+    },
+    "GetScoreLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-getScore"
+      }
+    },
+    "UpdateScoreLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-updateScore"
+      }
+    },
+    "DeleteScoreHandlerLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-deleteScoreHandler"
+      }
+    },
+    "CreateExamLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-createExam"
+      }
+    },
+    "ListExamLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-listExam"
+      }
+    },
+    "GetExamLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-getExam"
+      }
+    },
+    "UpdateExamLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-updateExam"
+      }
+    },
+    "DeleteExamHandlerLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/api-student-dev-deleteExamHandler"
+      }
+    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -226,6 +364,36 @@
                     {
                       "Fn::GetAtt": [
                         "studentTable",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "teacherTable",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "subjectTable",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "groupTable",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "scoreTable",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "examTable",
                         "Arn"
                       ]
                     }
@@ -354,6 +522,144 @@
                         "DeleteStudentHandlerLogGroup",
                         "Arn"
                       ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "CreateTeacherLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListTeacherLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "GetTeacherLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "GetTeacherTokenHandlerLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "DeleteTeacherHandlerLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "UpdateTeacherLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "CreateSubjectLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListSubjectsLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "CreateGroupLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListGroupLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListStudentGroupsLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListTeacherGroupsLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListTeacherGroupBySubjectLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "CreateScoreLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListScoreLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "GetScoreLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "UpdateScoreLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "DeleteScoreHandlerLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "CreateExamLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "ListExamLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "GetExamLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "UpdateExamLogGroup",
+                        "Arn"
+                      ]
+                    },
+                    {
+                      "Fn::GetAtt": [
+                        "DeleteExamHandlerLogGroup",
+                        "Arn"
+                      ]
                     }
                   ]
                 }
@@ -370,7 +676,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.RoleHandler.CreateRoleHandler",
         "Runtime": "java8",
@@ -395,7 +701,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.RoleHandler.ListRoleHandler",
         "Runtime": "java8",
@@ -420,7 +726,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.CreateUserHandler",
         "Runtime": "java8",
@@ -445,7 +751,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.ListUserHandler",
         "Runtime": "java8",
@@ -470,7 +776,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.GetUserHandler",
         "Runtime": "java8",
@@ -495,7 +801,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.UserHandler.LoginUserHandler",
         "Runtime": "java8",
@@ -520,7 +826,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.CreateStudentHandler",
         "Runtime": "java8",
@@ -545,7 +851,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.ListStudentHandler",
         "Runtime": "java8",
@@ -570,7 +876,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.GetStudentHandler",
         "Runtime": "java8",
@@ -595,7 +901,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.GetStudentTokenHandler",
         "Runtime": "java8",
@@ -620,7 +926,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.UpdateStudentHandler",
         "Runtime": "java8",
@@ -645,7 +951,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/build/distributions/hello.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
         "Handler": "com.serverless.handler.StudentHandler.DeleteStudentHandler",
         "Runtime": "java8",
@@ -663,124 +969,929 @@
         "DeleteStudentHandlerLogGroup"
       ]
     },
-    "CreateRoleLambdaVersionSzIupiGbu7X2fJZXMUnVU0sAFgb1w0VgCGK9eKoec": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
+    "CreateTeacherLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
       "Properties": {
-        "FunctionName": {
-          "Ref": "CreateRoleLambdaFunction"
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
-      }
+        "Handler": "com.serverless.handler.TeacherHandler.CreateTeacherHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-createTeacher",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "CreateTeacherLogGroup"
+      ]
     },
-    "CreateUserLambdaVersion6GdWVs0SPTcBEOIBgG7unu8Vnsaiqm547weOXM83TI": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
+    "ListTeacherLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
       "Properties": {
-        "FunctionName": {
-          "Ref": "CreateUserLambdaFunction"
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
-      }
+        "Handler": "com.serverless.handler.TeacherHandler.ListTeacherHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listTeacher",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListTeacherLogGroup"
+      ]
     },
-    "ListRoleLambdaVersion7b5Xz1VKcWEaHjBjCcnB0C9CWm4UtGsvu81ShqO8": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
+    "GetTeacherLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
       "Properties": {
-        "FunctionName": {
-          "Ref": "ListRoleLambdaFunction"
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
-      }
+        "Handler": "com.serverless.handler.TeacherHandler.GetTeacherHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-getTeacher",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetTeacherLogGroup"
+      ]
     },
-    "ListUserLambdaVersion3xvq42AtH2ith6qqgOJDKXD6MrrIFZtPzD8IbnYVXZg": {
+    "GetTeacherTokenHandlerLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.TeacherHandler.GetTeacherTokenHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-getTeacherTokenHandler",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetTeacherTokenHandlerLogGroup"
+      ]
+    },
+    "DeleteTeacherHandlerLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.TeacherHandler.DeleteTeacherHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-deleteTeacherHandler",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "DeleteTeacherHandlerLogGroup"
+      ]
+    },
+    "UpdateTeacherLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.TeacherHandler.UpdateTeacherHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-updateTeacher",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "UpdateTeacherLogGroup"
+      ]
+    },
+    "CreateSubjectLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.SubjectHandler.CreateSubjectHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-createSubject",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "CreateSubjectLogGroup"
+      ]
+    },
+    "ListSubjectsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.SubjectHandler.ListSubjectHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listSubjects",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListSubjectsLogGroup"
+      ]
+    },
+    "CreateGroupLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.GroupHandler.CreateGroupHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-createGroup",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "CreateGroupLogGroup"
+      ]
+    },
+    "ListGroupLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.GroupHandler.ListGroupHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listGroup",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListGroupLogGroup"
+      ]
+    },
+    "ListStudentGroupsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.GroupHandler.ListGroupStudentHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listStudentGroups",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListStudentGroupsLogGroup"
+      ]
+    },
+    "ListTeacherGroupsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.GroupHandler.ListGroupTeacherHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listTeacherGroups",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListTeacherGroupsLogGroup"
+      ]
+    },
+    "ListTeacherGroupBySubjectLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.GroupHandler.ListGroupTeacherByIdHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listTeacherGroupBySubject",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListTeacherGroupBySubjectLogGroup"
+      ]
+    },
+    "CreateScoreLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ScoreHandler.CreateScoreHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-createScore",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "CreateScoreLogGroup"
+      ]
+    },
+    "ListScoreLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ScoreHandler.ListScoreHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listScore",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListScoreLogGroup"
+      ]
+    },
+    "GetScoreLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ScoreHandler.GetScoreHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-getScore",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetScoreLogGroup"
+      ]
+    },
+    "UpdateScoreLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ScoreHandler.UpdateScoreHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-updateScore",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "UpdateScoreLogGroup"
+      ]
+    },
+    "DeleteScoreHandlerLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ScoreHandler.DeleteScoreHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-deleteScoreHandler",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "DeleteScoreHandlerLogGroup"
+      ]
+    },
+    "CreateExamLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ExamHandler.CreateExamHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-createExam",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "CreateExamLogGroup"
+      ]
+    },
+    "ListExamLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ExamHandler.ListExamHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-listExam",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ListExamLogGroup"
+      ]
+    },
+    "GetExamLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ExamHandler.GetExamHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-getExam",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetExamLogGroup"
+      ]
+    },
+    "UpdateExamLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ExamHandler.UpdateExamHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-updateExam",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "UpdateExamLogGroup"
+      ]
+    },
+    "DeleteExamHandlerLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/build/distributions/hello.zip"
+        },
+        "Handler": "com.serverless.handler.ExamHandler.DeleteExamHandler",
+        "Runtime": "java8",
+        "FunctionName": "api-student-dev-deleteExamHandler",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "DeleteExamHandlerLogGroup"
+      ]
+    },
+    "ListUserLambdaVersionSiFqEj0OcFo1CfVTxrzi9L8OIkvsvNYfgiZmn83TNU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListUserLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
-    "GetUserByUsernameLambdaVersionvwOqbH8LgCHWRXNx3SagfQsJMjCfDluU4udqhseet0": {
+    "CreateUserLambdaVersionhQ889m22lhativSN61bTxUDzgN5Scqlo7XM8HM2L5zE": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateUserLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "CreateRoleLambdaVersionWuRStmseSmBFuXVeGDyWh1JE3T5MaBnyh2n8bxTqLcs": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateRoleLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListRoleLambdaVersionsMi0qPsMy4zpLG4kKtnuT41jSoKFUJdPSgjwpUK8Fk": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListRoleLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "GetUserByUsernameLambdaVersionpCt009Hz9PvFYhwVOACD0SFHgORI1pSGwdbDOOqD4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetUserByUsernameLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
-    "CreateStudentLambdaVersionP08jofdzZgQgxZxKpfrDd2Tgl5DisV82oCAX2IcE": {
+    "CreateStudentLambdaVersion97WtpiSbg5a2xiYURpslulgsdrZ8AaXgCxES43K78": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateStudentLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
-    "LoginUserLambdaVersionNoFUuNansMaGhFpM7G5BvOUiPLH6qQXobPxDevpByDE": {
+    "LoginUserLambdaVersion7my4LptpkMkEbTO87dd2vhpNOFC1yhTmRMLoTv9eMlM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "LoginUserLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
-    "ListStudentLambdaVersionHKPCdjXKNaGWRMwIjkBs4RuefKHW0zTOugepWDCx6kQ": {
+    "ListStudentLambdaVersionhAdj4QJJ44pOLZ3q9kdLoLUZhnQZseNmlBIdoYlqzg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListStudentLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
-    "GetStudentTokenHandlerLambdaVersionCc7ds5f3NyUXO8H1fFs0R2njcT408mceSdNbjwX9NM": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "GetStudentTokenHandlerLambdaFunction"
-        },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
-      }
-    },
-    "GetStudentLambdaVersionsONOSRIdtKQVFpBdqSFPxdX3LIuGP0RSLEXX8O2s": {
+    "GetStudentLambdaVersioneQqUzjpLur5BolEmT3V4bQ1Bzsk3KTs4J25hoUXhEMU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetStudentLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
-    "UpdateStudentLambdaVersionWLGxvXhrDOYisyt6DCwjp8rL9sXYbvr0EVPKSE0lLs": {
+    "GetStudentTokenHandlerLambdaVersionTBk6bSRgcSsGSMMweMuNEQvkfbWxGGzZTcmdGpvJmXc": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetStudentTokenHandlerLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "UpdateStudentLambdaVersionbN1urxmGlcqEx1q17KJtGDnJd1H4E5XJ5QxqOKtcDIg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateStudentLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
-    "DeleteStudentHandlerLambdaVersionvBCyT4p0D2qZuj5PQ4voZyNXlxucV8rebkhf0mSdI": {
+    "CreateTeacherLambdaVersiongpeDypC6DZO7JE51VOAQ3zgo6nQTbWqthz2sTgs": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateTeacherLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListTeacherLambdaVersionUD4RX6d2TQ5MNzjZcbe5pU8HdE0b4i5iFV3aRDJeM": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListTeacherLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "DeleteStudentHandlerLambdaVersionFMtXuIn39bZhbpvroJUkV4T6MOM79lNnMhoDyM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteStudentHandlerLambdaFunction"
         },
-        "CodeSha256": "1txf/Cx8ClHe2nDobQ2o+J7D+qHGDT6UElrOMj6hG/k="
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "GetTeacherLambdaVersion8nhPaEuPLKBaPNwoFpvEgdXMQltvP8mSSl1PVLvXuY8": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetTeacherLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "GetTeacherTokenHandlerLambdaVersionXdzOVvANaefSEUXwKCXMPYUXU9J2Se0gDTrpyOE76pc": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetTeacherTokenHandlerLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "UpdateTeacherLambdaVersionokIZCwwQBK7hrDMgH6IfRfvxNG1TNJRVo5dwao9bhmc": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UpdateTeacherLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "CreateSubjectLambdaVersionTDiGh1UPNnHuVDXDQEBB3IhTp8JlYRlsreJuFxk": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateSubjectLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListSubjectsLambdaVersionZ33VdnDURsZjbuM6rGmIYTFsjGX3ekKMvTY6Pc": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListSubjectsLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "CreateGroupLambdaVersionDJYANc0yW6urV3oiZyrQhPJRUQ6CJEFNPSDXxqH16s": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateGroupLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListGroupLambdaVersion9azASsXzG5BaquCHU3kZYMkWH0UdSxVvMCPWsdtqNs": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListGroupLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListTeacherGroupBySubjectLambdaVersionjmyiNAYPY4n5lvKaER0MBRg36RhnaIqMku2f6JtaII": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListTeacherGroupBySubjectLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListStudentGroupsLambdaVersion9ILrs310Ii6Xh7ABZhWIataqakAhk2yXeK8YUFzozU": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListStudentGroupsLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "CreateScoreLambdaVersionhgEQufyJF97NCeCGo5s6VItHpreiNacjchIWRd5mU": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateScoreLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListTeacherGroupsLambdaVersionPwKkwWZonnGzojjEwEFeJdNmnP1OuxwmvpzdK9XL1A": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListTeacherGroupsLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "DeleteTeacherHandlerLambdaVersionURVH3QjZ4Znph3EFIFTOYEXfqBQNmwwX69ec2cqgAYk": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteTeacherHandlerLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListScoreLambdaVersion5tysTGnMnMqKG4ZgJOZnoVhPlof4ij3PdzXZv6c8": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListScoreLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "GetScoreLambdaVersion9cij2jIdGxyk0kl8dJGrfLYWWrtoYJdnAVv3MRegE4": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetScoreLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "UpdateScoreLambdaVersionzPhBbVzKiJWIE3UXoxsdETSgmxJcreqk1UHWjAxxiE": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UpdateScoreLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "DeleteScoreHandlerLambdaVersion5L4SuXupzleJYihYPVzP9crFLIKc3oYJXf5VYkI": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteScoreHandlerLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "CreateExamLambdaVersioneYOIGiROeBwdhGdsiudTnwMhau8DD6mN0S319XfKV9U": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateExamLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "GetExamLambdaVersionoMK9cVrf1WlJr1FftsUccCcTGPTapnu1kk9mMCyiU": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetExamLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "ListExamLambdaVersionmE2J81UO6cdul9kyX6FNb44p6z3nV6VB2FV5E4p05K8": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ListExamLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "UpdateExamLambdaVersionmoiChPJjZqGbWecIze6TOkfansujJ1VeJNOglrjI": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UpdateExamLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
+      }
+    },
+    "DeleteExamHandlerLambdaVersionV1I14KSNKDKkHVNmRyNIvCVLHubldcmZ81ohchSbq0": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteExamHandlerLambdaFunction"
+        },
+        "CodeSha256": "VRf2cMxzWqirOfxG1reZs4bCalfEernOrFHFRT+gvnI="
       }
     },
     "ApiGatewayRestApi": {
@@ -883,6 +1994,171 @@
           "Ref": "ApiGatewayResourceStudent"
         },
         "PathPart": "token",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceTeacher": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "teacher",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceTeacherIdVar": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceTeacher"
+        },
+        "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceTeacherToken": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceTeacher"
+        },
+        "PathPart": "token",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceSubject": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "subject",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceGroup": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "group",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceListstudentgroups": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "liststudentgroups",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceListteachergroups": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "listteachergroups",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceListteachergroupsIdVar": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceListteachergroups"
+        },
+        "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceScore": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "score",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceScoreIdVar": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceScore"
+        },
+        "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceExam": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "exam",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceExamIdVar": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceExam"
+        },
+        "PathPart": "{id}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -1440,7 +2716,1065 @@
         "DeleteStudentHandlerLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1635932952211": {
+    "ApiGatewayMethodTeacherPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTeacher"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateTeacherLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "CreateTeacherLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodTeacherGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTeacher"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListTeacherLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListTeacherLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodTeacherIdVarGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTeacherIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetTeacherLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "GetTeacherLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodTeacherTokenGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTeacherToken"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetTeacherTokenHandlerLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "GetTeacherTokenHandlerLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodTeacherIdVarDelete": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTeacherIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "DeleteTeacherHandlerLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "DeleteTeacherHandlerLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodTeacherPut": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "PUT",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTeacher"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "UpdateTeacherLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "UpdateTeacherLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodSubjectPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceSubject"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateSubjectLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "CreateSubjectLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodSubjectGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceSubject"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListSubjectsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListSubjectsLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodGroupPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceGroup"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateGroupLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "CreateGroupLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodGroupGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceGroup"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListGroupLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListGroupLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodListstudentgroupsGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceListstudentgroups"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListStudentGroupsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListStudentGroupsLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodListteachergroupsGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceListteachergroups"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListTeacherGroupsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListTeacherGroupsLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodListteachergroupsIdVarGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceListteachergroupsIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListTeacherGroupBySubjectLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListTeacherGroupBySubjectLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodScorePost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceScore"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateScoreLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "CreateScoreLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodScoreGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceScore"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListScoreLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListScoreLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodScoreIdVarGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceScoreIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetScoreLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "GetScoreLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodScorePut": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "PUT",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceScore"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "UpdateScoreLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "UpdateScoreLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodScoreIdVarDelete": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceScoreIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "DeleteScoreHandlerLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "DeleteScoreHandlerLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodExamPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceExam"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateExamLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "CreateExamLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodExamGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceExam"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ListExamLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ListExamLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodExamIdVarGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceExamIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetExamLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "GetExamLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodExamPut": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "PUT",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceExam"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "UpdateExamLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "UpdateExamLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodExamIdVarDelete": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceExamIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "DeleteExamHandlerLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "DeleteExamHandlerLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayDeployment1637034122792": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1460,7 +3794,30 @@
         "ApiGatewayMethodStudentIdVarGet",
         "ApiGatewayMethodStudentTokenGet",
         "ApiGatewayMethodStudentPut",
-        "ApiGatewayMethodStudentIdVarDelete"
+        "ApiGatewayMethodStudentIdVarDelete",
+        "ApiGatewayMethodTeacherPost",
+        "ApiGatewayMethodTeacherGet",
+        "ApiGatewayMethodTeacherIdVarGet",
+        "ApiGatewayMethodTeacherTokenGet",
+        "ApiGatewayMethodTeacherIdVarDelete",
+        "ApiGatewayMethodTeacherPut",
+        "ApiGatewayMethodSubjectPost",
+        "ApiGatewayMethodSubjectGet",
+        "ApiGatewayMethodGroupPost",
+        "ApiGatewayMethodGroupGet",
+        "ApiGatewayMethodListstudentgroupsGet",
+        "ApiGatewayMethodListteachergroupsGet",
+        "ApiGatewayMethodListteachergroupsIdVarGet",
+        "ApiGatewayMethodScorePost",
+        "ApiGatewayMethodScoreGet",
+        "ApiGatewayMethodScoreIdVarGet",
+        "ApiGatewayMethodScorePut",
+        "ApiGatewayMethodScoreIdVarDelete",
+        "ApiGatewayMethodExamPost",
+        "ApiGatewayMethodExamGet",
+        "ApiGatewayMethodExamIdVarGet",
+        "ApiGatewayMethodExamPut",
+        "ApiGatewayMethodExamIdVarDelete"
       ]
     },
     "CreateRoleLambdaPermissionApiGateway": {
@@ -1907,6 +4264,857 @@
         }
       }
     },
+    "CreateTeacherLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateTeacherLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListTeacherLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListTeacherLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetTeacherLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetTeacherLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetTeacherTokenHandlerLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetTeacherTokenHandlerLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "DeleteTeacherHandlerLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "DeleteTeacherHandlerLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "UpdateTeacherLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "UpdateTeacherLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "CreateSubjectLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateSubjectLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListSubjectsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListSubjectsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "CreateGroupLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateGroupLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListGroupLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListGroupLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListStudentGroupsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListStudentGroupsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListTeacherGroupsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListTeacherGroupsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListTeacherGroupBySubjectLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListTeacherGroupBySubjectLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "CreateScoreLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateScoreLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListScoreLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListScoreLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetScoreLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetScoreLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "UpdateScoreLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "UpdateScoreLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "DeleteScoreHandlerLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "DeleteScoreHandlerLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "CreateExamLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateExamLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ListExamLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ListExamLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetExamLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetExamLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "UpdateExamLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "UpdateExamLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "DeleteExamHandlerLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "DeleteExamHandlerLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
     "ApiGatewayLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
@@ -2016,7 +5224,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-student/dev/1635932959193-2021-11-03T09:49:19.193Z/custom-resources.zip"
+          "S3Key": "serverless/api-student/dev/1637034130622-2021-11-16T03:42:10.622Z/custom-resources.zip"
         },
         "FunctionName": "api-student-dev-custom-resource-apigw-cw-role",
         "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -2082,6 +5290,116 @@
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
         "TableName": "student_table",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        }
+      }
+    },
+    "teacherTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "teacher_table",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        }
+      }
+    },
+    "subjectTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "subject_table",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        }
+      }
+    },
+    "groupTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "group_table",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        }
+      }
+    },
+    "scoreTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "score_table",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
+        }
+      }
+    },
+    "examTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "exam_table",
         "AttributeDefinitions": [
           {
             "AttributeName": "id",
@@ -2220,6 +5538,236 @@
         }
       }
     },
+    "CWLSubFilterCreateTeacherLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "CreateTeacherLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListTeacherLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListTeacherLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterGetTeacherLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "GetTeacherLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterGetTeacherTokenHandlerLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "GetTeacherTokenHandlerLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterDeleteTeacherHandlerLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "DeleteTeacherHandlerLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterUpdateTeacherLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "UpdateTeacherLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterCreateSubjectLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "CreateSubjectLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListSubjectsLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListSubjectsLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterCreateGroupLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "CreateGroupLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListGroupLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListGroupLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListStudentGroupsLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListStudentGroupsLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListTeacherGroupsLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListTeacherGroupsLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListTeacherGroupBySubjectLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListTeacherGroupBySubjectLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterCreateScoreLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "CreateScoreLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListScoreLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListScoreLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterGetScoreLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "GetScoreLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterUpdateScoreLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "UpdateScoreLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterDeleteScoreHandlerLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "DeleteScoreHandlerLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterCreateExamLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "CreateExamLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterListExamLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "ListExamLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterGetExamLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "GetExamLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterUpdateExamLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "UpdateExamLogGroup"
+        }
+      }
+    },
+    "CWLSubFilterDeleteExamHandlerLogGroupUsEast1": {
+      "Type": "AWS::Logs::SubscriptionFilter",
+      "Properties": {
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:6949c58a-4e62-40e6-bf87-507744790091#sbjRHGzjSs35lZZ0qx#api-student#dev",
+        "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
+        "LogGroupName": {
+          "Ref": "DeleteExamHandlerLogGroup"
+        }
+      }
+    },
     "CWLSubFilterApiGatewayLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
@@ -2251,46 +5799,46 @@
         "Name": "sls-api-student-dev-EnterpriseLogAccessIamRole"
       }
     },
-    "CreateRoleLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "CreateRoleLambdaVersionSzIupiGbu7X2fJZXMUnVU0sAFgb1w0VgCGK9eKoec"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-CreateRoleLambdaFunctionQualifiedArn"
-      }
-    },
-    "CreateUserLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "CreateUserLambdaVersion6GdWVs0SPTcBEOIBgG7unu8Vnsaiqm547weOXM83TI"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-CreateUserLambdaFunctionQualifiedArn"
-      }
-    },
-    "ListRoleLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "ListRoleLambdaVersion7b5Xz1VKcWEaHjBjCcnB0C9CWm4UtGsvu81ShqO8"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-ListRoleLambdaFunctionQualifiedArn"
-      }
-    },
     "ListUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListUserLambdaVersion3xvq42AtH2ith6qqgOJDKXD6MrrIFZtPzD8IbnYVXZg"
+        "Ref": "ListUserLambdaVersionSiFqEj0OcFo1CfVTxrzi9L8OIkvsvNYfgiZmn83TNU"
       },
       "Export": {
         "Name": "sls-api-student-dev-ListUserLambdaFunctionQualifiedArn"
       }
     },
+    "CreateUserLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateUserLambdaVersionhQ889m22lhativSN61bTxUDzgN5Scqlo7XM8HM2L5zE"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateUserLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateRoleLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateRoleLambdaVersionWuRStmseSmBFuXVeGDyWh1JE3T5MaBnyh2n8bxTqLcs"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateRoleLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListRoleLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListRoleLambdaVersionsMi0qPsMy4zpLG4kKtnuT41jSoKFUJdPSgjwpUK8Fk"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListRoleLambdaFunctionQualifiedArn"
+      }
+    },
     "GetUserByUsernameLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetUserByUsernameLambdaVersionvwOqbH8LgCHWRXNx3SagfQsJMjCfDluU4udqhseet0"
+        "Ref": "GetUserByUsernameLambdaVersionpCt009Hz9PvFYhwVOACD0SFHgORI1pSGwdbDOOqD4"
       },
       "Export": {
         "Name": "sls-api-student-dev-GetUserByUsernameLambdaFunctionQualifiedArn"
@@ -2299,7 +5847,7 @@
     "CreateStudentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateStudentLambdaVersionP08jofdzZgQgxZxKpfrDd2Tgl5DisV82oCAX2IcE"
+        "Ref": "CreateStudentLambdaVersion97WtpiSbg5a2xiYURpslulgsdrZ8AaXgCxES43K78"
       },
       "Export": {
         "Name": "sls-api-student-dev-CreateStudentLambdaFunctionQualifiedArn"
@@ -2308,7 +5856,7 @@
     "LoginUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "LoginUserLambdaVersionNoFUuNansMaGhFpM7G5BvOUiPLH6qQXobPxDevpByDE"
+        "Ref": "LoginUserLambdaVersion7my4LptpkMkEbTO87dd2vhpNOFC1yhTmRMLoTv9eMlM"
       },
       "Export": {
         "Name": "sls-api-student-dev-LoginUserLambdaFunctionQualifiedArn"
@@ -2317,46 +5865,253 @@
     "ListStudentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListStudentLambdaVersionHKPCdjXKNaGWRMwIjkBs4RuefKHW0zTOugepWDCx6kQ"
+        "Ref": "ListStudentLambdaVersionhAdj4QJJ44pOLZ3q9kdLoLUZhnQZseNmlBIdoYlqzg"
       },
       "Export": {
         "Name": "sls-api-student-dev-ListStudentLambdaFunctionQualifiedArn"
       }
     },
-    "GetStudentTokenHandlerLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "GetStudentTokenHandlerLambdaVersionCc7ds5f3NyUXO8H1fFs0R2njcT408mceSdNbjwX9NM"
-      },
-      "Export": {
-        "Name": "sls-api-student-dev-GetStudentTokenHandlerLambdaFunctionQualifiedArn"
-      }
-    },
     "GetStudentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetStudentLambdaVersionsONOSRIdtKQVFpBdqSFPxdX3LIuGP0RSLEXX8O2s"
+        "Ref": "GetStudentLambdaVersioneQqUzjpLur5BolEmT3V4bQ1Bzsk3KTs4J25hoUXhEMU"
       },
       "Export": {
         "Name": "sls-api-student-dev-GetStudentLambdaFunctionQualifiedArn"
       }
     },
+    "GetStudentTokenHandlerLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetStudentTokenHandlerLambdaVersionTBk6bSRgcSsGSMMweMuNEQvkfbWxGGzZTcmdGpvJmXc"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-GetStudentTokenHandlerLambdaFunctionQualifiedArn"
+      }
+    },
     "UpdateStudentLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateStudentLambdaVersionWLGxvXhrDOYisyt6DCwjp8rL9sXYbvr0EVPKSE0lLs"
+        "Ref": "UpdateStudentLambdaVersionbN1urxmGlcqEx1q17KJtGDnJd1H4E5XJ5QxqOKtcDIg"
       },
       "Export": {
         "Name": "sls-api-student-dev-UpdateStudentLambdaFunctionQualifiedArn"
       }
     },
+    "CreateTeacherLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateTeacherLambdaVersiongpeDypC6DZO7JE51VOAQ3zgo6nQTbWqthz2sTgs"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateTeacherLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListTeacherLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListTeacherLambdaVersionUD4RX6d2TQ5MNzjZcbe5pU8HdE0b4i5iFV3aRDJeM"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListTeacherLambdaFunctionQualifiedArn"
+      }
+    },
     "DeleteStudentHandlerLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteStudentHandlerLambdaVersionvBCyT4p0D2qZuj5PQ4voZyNXlxucV8rebkhf0mSdI"
+        "Ref": "DeleteStudentHandlerLambdaVersionFMtXuIn39bZhbpvroJUkV4T6MOM79lNnMhoDyM"
       },
       "Export": {
         "Name": "sls-api-student-dev-DeleteStudentHandlerLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetTeacherLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetTeacherLambdaVersion8nhPaEuPLKBaPNwoFpvEgdXMQltvP8mSSl1PVLvXuY8"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-GetTeacherLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetTeacherTokenHandlerLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetTeacherTokenHandlerLambdaVersionXdzOVvANaefSEUXwKCXMPYUXU9J2Se0gDTrpyOE76pc"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-GetTeacherTokenHandlerLambdaFunctionQualifiedArn"
+      }
+    },
+    "UpdateTeacherLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UpdateTeacherLambdaVersionokIZCwwQBK7hrDMgH6IfRfvxNG1TNJRVo5dwao9bhmc"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-UpdateTeacherLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateSubjectLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateSubjectLambdaVersionTDiGh1UPNnHuVDXDQEBB3IhTp8JlYRlsreJuFxk"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateSubjectLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListSubjectsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListSubjectsLambdaVersionZ33VdnDURsZjbuM6rGmIYTFsjGX3ekKMvTY6Pc"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListSubjectsLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateGroupLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateGroupLambdaVersionDJYANc0yW6urV3oiZyrQhPJRUQ6CJEFNPSDXxqH16s"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateGroupLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListGroupLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListGroupLambdaVersion9azASsXzG5BaquCHU3kZYMkWH0UdSxVvMCPWsdtqNs"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListGroupLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListTeacherGroupBySubjectLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListTeacherGroupBySubjectLambdaVersionjmyiNAYPY4n5lvKaER0MBRg36RhnaIqMku2f6JtaII"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListTeacherGroupBySubjectLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListStudentGroupsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListStudentGroupsLambdaVersion9ILrs310Ii6Xh7ABZhWIataqakAhk2yXeK8YUFzozU"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListStudentGroupsLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateScoreLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateScoreLambdaVersionhgEQufyJF97NCeCGo5s6VItHpreiNacjchIWRd5mU"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateScoreLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListTeacherGroupsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListTeacherGroupsLambdaVersionPwKkwWZonnGzojjEwEFeJdNmnP1OuxwmvpzdK9XL1A"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListTeacherGroupsLambdaFunctionQualifiedArn"
+      }
+    },
+    "DeleteTeacherHandlerLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DeleteTeacherHandlerLambdaVersionURVH3QjZ4Znph3EFIFTOYEXfqBQNmwwX69ec2cqgAYk"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-DeleteTeacherHandlerLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListScoreLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListScoreLambdaVersion5tysTGnMnMqKG4ZgJOZnoVhPlof4ij3PdzXZv6c8"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListScoreLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetScoreLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetScoreLambdaVersion9cij2jIdGxyk0kl8dJGrfLYWWrtoYJdnAVv3MRegE4"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-GetScoreLambdaFunctionQualifiedArn"
+      }
+    },
+    "UpdateScoreLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UpdateScoreLambdaVersionzPhBbVzKiJWIE3UXoxsdETSgmxJcreqk1UHWjAxxiE"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-UpdateScoreLambdaFunctionQualifiedArn"
+      }
+    },
+    "DeleteScoreHandlerLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DeleteScoreHandlerLambdaVersion5L4SuXupzleJYihYPVzP9crFLIKc3oYJXf5VYkI"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-DeleteScoreHandlerLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateExamLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateExamLambdaVersioneYOIGiROeBwdhGdsiudTnwMhau8DD6mN0S319XfKV9U"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-CreateExamLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetExamLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetExamLambdaVersionoMK9cVrf1WlJr1FftsUccCcTGPTapnu1kk9mMCyiU"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-GetExamLambdaFunctionQualifiedArn"
+      }
+    },
+    "ListExamLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ListExamLambdaVersionmE2J81UO6cdul9kyX6FNb44p6z3nV6VB2FV5E4p05K8"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-ListExamLambdaFunctionQualifiedArn"
+      }
+    },
+    "UpdateExamLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UpdateExamLambdaVersionmoiChPJjZqGbWecIze6TOkfansujJ1VeJNOglrjI"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-UpdateExamLambdaFunctionQualifiedArn"
+      }
+    },
+    "DeleteExamHandlerLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DeleteExamHandlerLambdaVersionV1I14KSNKDKkHVNmRyNIvCVLHubldcmZ81ohchSbq0"
+      },
+      "Export": {
+        "Name": "sls-api-student-dev-DeleteExamHandlerLambdaFunctionQualifiedArn"
       }
     },
     "ServiceEndpoint": {
