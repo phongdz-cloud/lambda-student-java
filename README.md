@@ -62,9 +62,9 @@
 
 Các công nghệ, ngôn ngữ, thư viện và các dịch vụ của AWS nhóm sử dụng.
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" width=50 height=50> Angular là một framework mạnh mẽ để có thể xây dựng Front-end một cách nhanh chóng và hiệu quả <br>
-- <img src="https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png" width=50 height=50>  Java là một ngôn ngữ thuần hướng đối tượng
-- <img src="https://cdn.svgporn.com/logos/aws.svg" width=30 height=30>  Các dịch vụ dùng cho project như Lambda Funtion, API Gateway, DynamoDB, S3, EC2<br>
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" width=50 height=50> Angular là một javascript framework do google phát triển để xây dựng các Single Page Application (SPA) bằng JavaScript , HTML và TypeScript <br>
+- <img src="https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png" width=50 height=50>  Java là một một ngôn ngữ lập trình hiện đại, bậc cao, hướng đối tượng, bảo mật và mạnh mẽ. và là một Platform.
+- <img src="https://cdn.svgporn.com/logos/aws.svg" width=30 height=30>  Amazon Web Services (AWS) là nền tảng đám mây toàn diện và được sử dụng rộng rãi nhất, cung cấp trên 200 dịch vụ đầy đủ tính năng từ các trung tâm dữ liệu trên toàn thế giới<br>
 
 
 
