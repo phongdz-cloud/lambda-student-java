@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="C:\Users\dell\Downloads\logo.jpg" alt="Logo" width="80" height="80">
+    <img src="https://firebasestorage.googleapis.com/v0/b/hoaiphong-4cfd9.appspot.com/o/logo.jpg?alt=media&token=848e1981-5300-4bfc-807a-53b0b1ecc706" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Trường đại học sư phạm kĩ thuật TPHCM</h3>
