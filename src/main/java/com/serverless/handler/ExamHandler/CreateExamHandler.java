@@ -10,6 +10,8 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IExamService;
 import com.serverless.service.Impl.ExamService;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class CreateExamHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -21,6 +23,8 @@ public class CreateExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper objectMapper = new ObjectMapper();
       Exam exam = objectMapper.readValue(input.getBody(), Exam.class);
@@ -28,6 +32,7 @@ public class CreateExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
       logger.info("Exam saved success");
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.OK)
+          .setHeaders(origin)
           .setObjectBody(exam)
           .build();
     } catch (Exception e) {
@@ -36,6 +41,7 @@ public class CreateExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
       Response response = new Response("Error in save exam", input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
+          .setHeaders(origin)
           .setObjectBody(response)
           .build();
     }

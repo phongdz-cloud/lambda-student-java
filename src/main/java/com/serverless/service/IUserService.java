@@ -14,4 +14,8 @@ public interface IUserService {
   Boolean existsUserByUsernameAndPassword(User user);
 
   String save(User user);
+
+  String delete(User user);
+
+  User findUserByUsername(String username);
 }

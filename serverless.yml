@@ -1,13 +1,11 @@
-service: api-student
-app: student
+service: api-studentphong
+app: student-phong
 org: longtam20015
 frameworkVersion: '2'
 
 provider:
   name: aws
   runtime: java8
-  httpApi:
-    cors: true
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -40,7 +38,7 @@ functions:
       - http:
           path: /role
           method: post
-
+          cors: true
 
   listRole:
     handler: com.serverless.handler.RoleHandler.ListRoleHandler
@@ -48,23 +46,41 @@ functions:
       - http:
           path: /role
           method: get
+          cors: true
+  #Lambda Role
 
-
+  #Lambda User
   createUser:
     handler: com.serverless.handler.UserHandler.CreateUserHandler
     events:
       - http:
           path: /user
           method: post
-  #Lambda Role
+          cors: true
 
-  #Lambda User
+  updateUser:
+    handler: com.serverless.handler.UserHandler.UpdateUserHandler
+    events:
+      - http:
+          path: /user
+          method: put
+          cors: true
+
+  getUserByToken:
+    handler: com.serverless.handler.UserHandler.GetUserByTokenHandler
+    events:
+      - http:
+          path: /user/token
+          method: get
+          cors: true
+
   listUser:
     handler: com.serverless.handler.UserHandler.ListUserHandler
     events:
       - http:
           path: /user
           method: get
+          cors: true
 
   getUserByUsername:
     handler: com.serverless.handler.UserHandler.GetUserHandler
@@ -72,6 +88,7 @@ functions:
       - http:
           path: /user/{id}
           method: get
+          cors: true
 
   loginUser:
     handler: com.serverless.handler.UserHandler.LoginUserHandler
@@ -79,6 +96,7 @@ functions:
       - http:
           path: /user/login
           method: post
+          cors: true
   #Lambda User
 
   #Lambda Student
@@ -88,12 +106,14 @@ functions:
       - http:
           path: /student
           method: post
+          cors: true
   listStudent:
     handler: com.serverless.handler.StudentHandler.ListStudentHandler
     events:
       - http:
           path: /student
           method: get
+          cors: true
 
   getStudent:
     handler: com.serverless.handler.StudentHandler.GetStudentHandler
@@ -101,6 +121,7 @@ functions:
       - http:
           path: /student/{id}
           method: get
+          cors: true
 
   getStudentTokenHandler:
     handler: com.serverless.handler.StudentHandler.GetStudentTokenHandler
@@ -108,6 +129,7 @@ functions:
       - http:
           path: /student/token
           method: get
+          cors: true
 
   updateStudent:
     handler: com.serverless.handler.StudentHandler.UpdateStudentHandler
@@ -115,12 +137,14 @@ functions:
       - http:
           path: /student
           method: put
+          cors: true
   deleteStudentHandler:
     handler: com.serverless.handler.StudentHandler.DeleteStudentHandler
     events:
       - http:
           path: /student/{id}
           method: delete
+          cors: true
   #Lambda Student
   #Lambda Teacher
   createTeacher:
@@ -129,20 +153,21 @@ functions:
       - http:
           path: /teacher
           method: post
-
+          cors: true
   listTeacher:
     handler: com.serverless.handler.TeacherHandler.ListTeacherHandler
     events:
       - http:
           path: /teacher
           method: get
-
+          cors: true
   getTeacher:
     handler: com.serverless.handler.TeacherHandler.GetTeacherHandler
     events:
       - http:
           path: /teacher/{id}
           method: get
+          cors: true
 
   getTeacherTokenHandler:
     handler: com.serverless.handler.TeacherHandler.GetTeacherTokenHandler
@@ -150,6 +175,7 @@ functions:
       - http:
           path: /teacher/token
           method: get
+          cors: true
 
   deleteTeacherHandler:
     handler: com.serverless.handler.TeacherHandler.DeleteTeacherHandler
@@ -157,6 +183,7 @@ functions:
       - http:
           path: /teacher/{id}
           method: delete
+          cors: true
 
   updateTeacher:
     handler: com.serverless.handler.TeacherHandler.UpdateTeacherHandler
@@ -164,6 +191,7 @@ functions:
       - http:
           path: /teacher
           method: put
+          cors: true
   #Lambda Teacher
 
   #Lambda Subject
@@ -173,6 +201,23 @@ functions:
       - http:
           path: /subject
           method: post
+          cors: true
+
+  updateSubject:
+    handler: com.serverless.handler.SubjectHandler.UpdateSubjectHandler
+    events:
+      - http:
+          path: /subject
+          method: put
+          cors: true
+
+  deleteSubject:
+    handler: com.serverless.handler.SubjectHandler.DeleteSubjectHandler
+    events:
+      - http:
+          path: /subject/{id}
+          method: delete
+          cors: true
 
   listSubjects:
     handler: com.serverless.handler.SubjectHandler.ListSubjectHandler
@@ -180,6 +225,7 @@ functions:
       - http:
           path: /subject
           method: get
+          cors: true
 
   #Lambda Subject
   #Lambda Group
@@ -189,6 +235,23 @@ functions:
       - http:
           path: /group
           method: post
+          cors: true
+
+  getGroup:
+    handler: com.serverless.handler.GroupHandler.GetGroupHandler
+    events:
+      - http:
+          path: /group/{id}
+          method: get
+          cors: true
+
+  getGroupByToken:
+    handler: com.serverless.handler.GroupHandler.GetGroupByTokenHandler
+    events:
+      - http:
+          path: /group/token
+          method: get
+          cors: true
 
   listGroup:
     handler: com.serverless.handler.GroupHandler.ListGroupHandler
@@ -196,27 +259,28 @@ functions:
       - http:
           path: /group
           method: get
-
+          cors: true
   listStudentGroups:
     handler: com.serverless.handler.GroupHandler.ListGroupStudentHandler
     events:
       - http:
           path: /liststudentgroups
           method: get
-
+          cors: true
   listTeacherGroups:
     handler: com.serverless.handler.GroupHandler.ListGroupTeacherHandler
     events:
       - http:
           path: /listteachergroups
           method: get
-
+          cors: true
   listTeacherGroupBySubject:
     handler: com.serverless.handler.GroupHandler.ListGroupTeacherByIdHandler
     events:
       - http:
           path: /listteachergroups/{id}
           method: get
+          cors: true
   #Lambda Group
   #Lambda Score
   createScore:
@@ -225,34 +289,35 @@ functions:
       - http:
           path: /score
           method: post
-
+          cors: true
   listScore:
     handler: com.serverless.handler.ScoreHandler.ListScoreHandler
     events:
       - http:
           path: /score
           method: get
-
+          cors: true
   getScore:
     handler: com.serverless.handler.ScoreHandler.GetScoreHandler
     events:
       - http:
           path: /score/{id}
           method: get
-
+          cors: true
   updateScore:
     handler: com.serverless.handler.ScoreHandler.UpdateScoreHandler
     events:
       - http:
           path: /score
           method: put
-
+          cors: true
   deleteScoreHandler:
     handler: com.serverless.handler.ScoreHandler.DeleteScoreHandler
     events:
       - http:
           path: /score/{id}
           method: delete
+          cors: true
   #Lambda Score
   #Lambda Exam
   createExam:
@@ -261,35 +326,46 @@ functions:
       - http:
           path: /exam
           method: post
-
+          cors: true
   listExam:
     handler: com.serverless.handler.ExamHandler.ListExamHandler
     events:
       - http:
           path: /exam
           method: get
-
+          cors: true
   getExam:
     handler: com.serverless.handler.ExamHandler.GetExamHandler
     events:
       - http:
           path: /exam/{id}
           method: get
-
+          cors: true
   updateExam:
     handler: com.serverless.handler.ExamHandler.UpdateExamHandler
     events:
       - http:
           path: /exam
           method: put
-
+          cors: true
   deleteExamHandler:
     handler: com.serverless.handler.ExamHandler.DeleteExamHandler
     events:
       - http:
           path: /exam/{id}
           method: delete
+          cors: true
   #Lambda Exam
+
+  #Lambda Upload S3
+  createS3:
+    handler: com.serverless.handler.S3Handler.CreateS3Handler
+    events:
+      - http:
+          path: /upload
+          method: post
+          cors: true
+
 resources:
   Resources:
     roleTable:

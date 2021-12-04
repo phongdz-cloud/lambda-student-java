@@ -9,6 +9,7 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IUserService;
 import com.serverless.service.Impl.UserService;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -20,17 +21,21 @@ public class GetUserHandler implements RequestHandler<ApiGatewayRequest, ApiGate
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       Map<String, String> pathParameters = input.getPathParameters();
       String username = pathParameters.get("id");
       User user = userService.findUserById(username);
       if (user != null) {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.OK)
             .setObjectBody(user)
             .build();
       } else {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.NO_CONTENT)
             .setObjectBody(Constant.UNDEFINE)
             .build();
@@ -40,6 +45,7 @@ public class GetUserHandler implements RequestHandler<ApiGatewayRequest, ApiGate
       Response responseBody = new Response("Error in retrieving user: ",
            input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(responseBody)
           .build();

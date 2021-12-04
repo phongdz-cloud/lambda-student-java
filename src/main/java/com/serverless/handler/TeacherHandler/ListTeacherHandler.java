@@ -9,7 +9,9 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.ITeacherService;
 import com.serverless.service.Impl.TeacherService;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class ListTeacherHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -19,10 +21,13 @@ public class ListTeacherHandler implements RequestHandler<ApiGatewayRequest, Api
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       List<Teacher> teachers = teacherService.findAll();
       logger.info("List Teachers: " + teachers.size());
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.OK)
           .setObjectBody(teachers)
           .build();
@@ -30,6 +35,7 @@ public class ListTeacherHandler implements RequestHandler<ApiGatewayRequest, Api
       logger.error("Error in List Teacher! " + e.getMessage());
       Response response = new Response("Error in list Teacher: ", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.NO_CONTENT)
           .setObjectBody(response)
           .build();

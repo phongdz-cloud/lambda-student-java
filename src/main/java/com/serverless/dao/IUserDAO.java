@@ -15,4 +15,9 @@ public interface IUserDAO extends GenericDAO<User> {
   Boolean existsUserByUsernameAndPassword(User user);
 
   String save(User user);
+
+  String delete(User user);
+
+  User findUserByUsername(String username);
+
 }

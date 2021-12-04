@@ -10,6 +10,7 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IGroupService;
 import com.serverless.service.Impl.GroupService;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -22,10 +23,13 @@ public class ListGroupTeacherHandler implements
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       Map<Teacher, List<Subject>> teacherListMap = groupService.findAllSubjectByTeacher();
       logger.info("List teacher and subject: " + teacherListMap.size());
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.OK)
           .setObjectBody(teacherListMap)
           .build();
@@ -34,6 +38,7 @@ public class ListGroupTeacherHandler implements
       ex.printStackTrace();
       Response response = new Response("Error in teacher and subject: ", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

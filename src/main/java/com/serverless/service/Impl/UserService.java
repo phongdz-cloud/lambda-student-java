@@ -94,4 +94,18 @@ public class UserService implements IUserService {
     }
     return "success";
   }
+
+  @Override
+  public String delete(User user) {
+    if (userDAO.delete(user) != null) {
+      cache.updateFindALL(Constant.FINDALLUSER, userDAO.findAll());
+      cache.deleteCache(user.getId());
+    }
+    return "delete success";
+  }
+
+  @Override
+  public User findUserByUsername(String username) {
+    return userDAO.findUserByUsername(username);
+  }
 }

@@ -10,6 +10,8 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IRoleService;
 import com.serverless.service.Impl.RoleService;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class CreateRoleHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -19,12 +21,15 @@ public class CreateRoleHandler implements RequestHandler<ApiGatewayRequest, ApiG
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper mapper = new ObjectMapper();
       Role role = mapper.readValue(input.getBody(), Role.class);
       roleService.save(role);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.OK)
+          .setHeaders(origin)
           .setObjectBody(role)
           .build();
     } catch (Exception e) {
@@ -32,6 +37,7 @@ public class CreateRoleHandler implements RequestHandler<ApiGatewayRequest, ApiG
       Response responseBody = new Response("Error in saving Role!", input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
+          .setHeaders(origin)
           .setObjectBody(responseBody)
           .build();
     }

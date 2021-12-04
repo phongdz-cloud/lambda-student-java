@@ -17,6 +17,10 @@ public interface IGroupService {
 
   Map<Teacher, List<Student>> findTeacherAndStudentsBySubjectId(String subjectId);
 
+  List<Group> findAllGroupByStudentOrTeacherById(String id);
+
   String save(Group group);
+
+  Group findGroupById(String id);
 
 }

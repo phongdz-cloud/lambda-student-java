@@ -12,12 +12,14 @@ targetCompatibility = 1.8
 dependencies {
 //    // https://mvnrepository.com/artifact/org.mindrot/jbcrypt
     implementation group: 'org.mindrot', name: 'jbcrypt', version: '0.4'
-
     // https://mvnrepository.com/artifact/redis.clients/jedis
     implementation group: 'redis.clients', name: 'jedis', version: '3.3.0'
     // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
     implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.2'
-
+// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.12.84'
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.897'
 
     api(
             'com.amazonaws:aws-lambda-java-core:1.2.1',
@@ -26,7 +28,6 @@ dependencies {
             'com.fasterxml.jackson.core:jackson-core:2.11.0',
             'com.fasterxml.jackson.core:jackson-databind:2.11.0',
             'com.fasterxml.jackson.core:jackson-annotations:2.11.0'
-
     )
 }
 

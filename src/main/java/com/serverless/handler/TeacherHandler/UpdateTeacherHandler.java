@@ -11,6 +11,8 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.ITeacherService;
 import com.serverless.service.Impl.TeacherService;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class UpdateTeacherHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -20,16 +22,20 @@ public class UpdateTeacherHandler implements RequestHandler<ApiGatewayRequest, A
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper mapper = new ObjectMapper();
       Teacher newTeacher = mapper.readValue(input.getBody(), Teacher.class);
       if (teacherService.update(newTeacher.getId(), newTeacher) != null) {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.OK)
             .setObjectBody(newTeacher)
             .build();
       } else {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.ERROR)
             .setObjectBody("Update failed!")
             .build();
@@ -39,6 +45,7 @@ public class UpdateTeacherHandler implements RequestHandler<ApiGatewayRequest, A
       logger.error("Error in update Teacher: " + e.getMessage());
       Response response = new Response("Error in saving Teacher! ", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

@@ -1,5 +1,8 @@
 package com.serverless.dao.Impl;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.serverless.dao.IGroupDAO;
 import com.serverless.model.Group;
 import com.serverless.model.Student;
@@ -123,6 +126,38 @@ public class GroupDAO extends AbstractDAO<Group> implements IGroupDAO {
       logger.error("Error in Find Teacher And Students By SubjectId");
       return null;
     }
+  }
+
+  @Override
+  public List<Group> findAllGroupByStudentOrTeacherById(String id) {
+    List<Group> groupList = findAll();
+    List<Group> groupListOfStudentOrTeacher = new ArrayList<>();
+    for (Group g : groupList) {
+      logger.info("id: " + id);
+      if (g.getStudentId().equals(id) || g.getTeacherId().equals(id)) {
+        logger.info("id: " + id);
+        groupListOfStudentOrTeacher.add(g);
+      }
+    }
+    return groupListOfStudentOrTeacher;
+  }
+
+  @Override
+  public Group findGroupById(String id) {
+    Group group = null;
+    Map<String, AttributeValue> av = new HashMap<>();
+    av.put(":v1", new AttributeValue().withS(id));
+    DynamoDBQueryExpression<Group> query = new DynamoDBQueryExpression<Group>()
+        .withKeyConditionExpression("id = :v1")
+        .withExpressionAttributeValues(av);
+    PaginatedQueryList<Group> results = this.getMapper().query(Group.class, query);
+    if (results.size() > 0) {
+      group = results.get(0);
+      logger.debug("Student - get(): Student - + " + group.toString());
+    } else {
+      logger.debug("Student - get(): Student - Not Found!");
+    }
+    return group;
   }
 
   public boolean existsTeacherByTeacherId(List<String> keys, String techerId) {

@@ -98,10 +98,10 @@ public class Student implements Serializable {
   }
 
   @DynamoDBAttribute(attributeName = "gmail")
-
   public String getGmail() {
     return gmail;
   }
+
 
   public void setId(String id) {
     this.id = id;
@@ -134,6 +134,7 @@ public class Student implements Serializable {
   public void setAddress(String address) {
     this.address = address;
   }
+
 
   public void setYearOfAdminssion(String yearOfAdminssion) {
     this.yearOfAdminssion = yearOfAdminssion;
@@ -193,4 +194,6 @@ public class Student implements Serializable {
     return Objects.hash(userId, firstName, middleName, lastName, phone, bDate, address,
         yearOfAdminssion, status, graduationYear, gmail);
   }
+
+
 }

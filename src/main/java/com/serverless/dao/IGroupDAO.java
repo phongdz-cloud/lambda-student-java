@@ -17,6 +17,10 @@ public interface IGroupDAO extends GenericDAO<Group> {
 
   Map<Teacher, List<Student>> findTeacherAndStudentsBySubjectId(String subjectId);
 
+  List<Group> findAllGroupByStudentOrTeacherById(String id);
+
+  Group findGroupById(String id);
+
   String save(Group group);
 
 }

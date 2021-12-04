@@ -1,6 +1,6 @@
 package com.serverless.response;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class Response {
 
@@ -8,25 +8,17 @@ public class Response {
   private Boolean success;
   private String token;
   //  private final Map<String, Object> input;
-  private final ApiGatewayRequest input;
-  private HashMap<String, Object> headers;
+  private Map<String, String> headers;
 
 
   public Response(String message, ApiGatewayRequest input) {
     this.message = message;
-    this.input = input;
-//    this.headers.put("Access-Control-Allow-Headers", "Content-Type");
-//    this.headers.put("Access-Control-Allow-Origin", "*");
-//    this.headers.put("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+    this.headers = input.getHeaders();
   }
 
 
   public String getMessage() {
     return this.message;
-  }
-
-  public ApiGatewayRequest getInput() {
-    return this.input;
   }
 
   public Boolean getSuccess() {
@@ -43,5 +35,13 @@ public class Response {
 
   public void setToken(String token) {
     this.token = token;
+  }
+
+  public Map<String, String> getHeaders() {
+    return headers;
+  }
+
+  public void setHeaders(Map<String, String> headers) {
+    this.headers = headers;
   }
 }

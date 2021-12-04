@@ -58,6 +58,7 @@ public class ApiGatewayResponse {
     private byte[] binaryBody;
     private boolean base64Encoded;
 
+
     public Builder setStatusCode(int statusCode) {
       this.statusCode = statusCode;
       return this;

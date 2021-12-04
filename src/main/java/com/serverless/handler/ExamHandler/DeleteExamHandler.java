@@ -9,6 +9,7 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IExamService;
 import com.serverless.service.Impl.ExamService;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -21,6 +22,8 @@ public class DeleteExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       Map<String, String> pathParameters = input.getPathParameters();
       String id = pathParameters.get("id");
@@ -29,11 +32,13 @@ public class DeleteExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
         logger.debug("Delete exam by id: " + exam.getId());
         return ApiGatewayResponse.builder()
             .setStatusCode(Constant.OK)
+            .setHeaders(origin)
             .setObjectBody("Delete successfully!")
             .build();
       } else {
         return ApiGatewayResponse.builder()
             .setStatusCode(Constant.ERROR)
+            .setHeaders(origin)
             .setObjectBody("Delete failed!")
             .build();
       }
@@ -43,6 +48,7 @@ public class DeleteExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
       Response response = new Response("Error in delete Exam", input);
       return ApiGatewayResponse.builder()
           .setStatusCode(Constant.ERROR)
+          .setHeaders(origin)
           .setObjectBody(response)
           .build();
     }

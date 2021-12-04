@@ -10,6 +10,8 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.ISubjectService;
 import com.serverless.service.Impl.SubjectService;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class CreateSubjectHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -21,12 +23,15 @@ public class CreateSubjectHandler implements RequestHandler<ApiGatewayRequest, A
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper objectMapper = new ObjectMapper();
       Subject subject = objectMapper.readValue(input.getBody(), Subject.class);
       subjectService.save(subject);
       logger.debug("Subject saved success! " + subject);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.OK)
           .setObjectBody(subject)
           .build();
@@ -35,6 +40,7 @@ public class CreateSubjectHandler implements RequestHandler<ApiGatewayRequest, A
       e.printStackTrace();
       Response response = new Response("Error in saving Subject!", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

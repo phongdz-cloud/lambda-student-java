@@ -10,6 +10,8 @@ import com.serverless.response.Response;
 import com.serverless.service.ITeacherService;
 import com.serverless.service.Impl.TeacherService;
 import com.serverless.util.BearerToken;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class GetTeacherTokenHandler implements
@@ -21,6 +23,8 @@ public class GetTeacherTokenHandler implements
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       String id = null;
       Teacher teacher = null;
@@ -40,6 +44,7 @@ public class GetTeacherTokenHandler implements
             .build();
       }else{
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.NO_CONTENT)
             .setObjectBody("Not Authorization")
             .build();
@@ -49,6 +54,7 @@ public class GetTeacherTokenHandler implements
       Response response = new Response("Error in get Teacher token", input);
       e.printStackTrace();
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

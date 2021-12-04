@@ -49,7 +49,8 @@ public class StudentDAO extends AbstractDAO<Student> implements IStudentDAO {
       logger.info("User Id: " + idUser);
       List<Student> students = findAll();
       for (Student s : students) {
-        if (s.getUserId().equals(idUser)) {
+        logger.info("s.UserId: " + s.getUserId() + "idUser: " + idUser);
+        if (s.getUserId() != null && s.getUserId().equals(idUser)) {
           student = findStudentById(s.getId());
           break;
         }

@@ -9,6 +9,7 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IExamService;
 import com.serverless.service.Impl.ExamService;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -21,6 +22,8 @@ public class GetExamHandler implements RequestHandler<ApiGatewayRequest, ApiGate
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       Map<String, String> pathParameters = input.getPathParameters();
       String id = pathParameters.get("id");
@@ -28,11 +31,13 @@ public class GetExamHandler implements RequestHandler<ApiGatewayRequest, ApiGate
       if (exam != null) {
         return ApiGatewayResponse.builder()
             .setStatusCode(Constant.OK)
+            .setHeaders(origin)
             .setObjectBody(exam)
             .build();
       } else {
         return ApiGatewayResponse.builder()
-            .setObjectBody(Constant.NO_CONTENT)
+            .setHeaders(origin)
+            .setStatusCode(Constant.NO_CONTENT)
             .setObjectBody(Constant.UNDEFINE)
             .build();
       }
@@ -40,6 +45,7 @@ public class GetExamHandler implements RequestHandler<ApiGatewayRequest, ApiGate
       logger.error("Error in get exam by id");
       Response response = new Response("Error in get exam by id", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

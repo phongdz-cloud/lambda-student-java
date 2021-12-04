@@ -10,6 +10,8 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IExamService;
 import com.serverless.service.Impl.ExamService;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class UpdateExamHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -20,16 +22,20 @@ public class UpdateExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper mapper = new ObjectMapper();
       Exam newExam = mapper.readValue(input.getBody(), Exam.class);
       if (examService.update(newExam.getId(), newExam) != null) {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.OK)
             .setObjectBody(newExam)
             .build();
       } else {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.ERROR)
             .setObjectBody("Update failed!")
             .build();
@@ -39,6 +45,7 @@ public class UpdateExamHandler implements RequestHandler<ApiGatewayRequest, ApiG
       logger.error("Error in update exam!");
       Response response = new Response("Error in update Exam", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

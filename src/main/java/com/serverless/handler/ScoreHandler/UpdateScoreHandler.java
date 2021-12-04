@@ -10,6 +10,8 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IScoreService;
 import com.serverless.service.Impl.ScoreService;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class UpdateScoreHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -20,16 +22,20 @@ public class UpdateScoreHandler implements RequestHandler<ApiGatewayRequest, Api
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper mapper = new ObjectMapper();
       Score newScore = mapper.readValue(input.getBody(),Score.class);
       if(scoreService.update(newScore.getId(),newScore) != null){
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.OK)
             .setObjectBody(newScore)
             .build();
       }else{
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.ERROR)
             .setObjectBody("Update failed!")
             .build();
@@ -39,6 +45,7 @@ public class UpdateScoreHandler implements RequestHandler<ApiGatewayRequest, Api
       logger.error("Error in update score!");
       Response response = new Response("Error in update Score", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

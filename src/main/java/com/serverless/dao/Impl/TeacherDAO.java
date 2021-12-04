@@ -62,10 +62,10 @@ public class TeacherDAO extends AbstractDAO<Teacher> implements ITeacherDAO {
     Teacher teacher = null;
     try {
       String idUser = (String) JWTUtil.decodeJWT(token).get("jti");
-      logger.info("User id: " + idUser);
+      logger.info("Teacher id: " + idUser);
       List<Teacher> teachers = findAll();
       for (Teacher t : teachers) {
-        if (t.getId().equals(idUser)) {
+        if (t.getUserId() != null &&t.getUserId().equals(idUser)) {
           teacher = findTeacherById(t.getId());
           break;
         }

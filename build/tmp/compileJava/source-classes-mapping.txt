@@ -1,25 +1,10 @@
-com/serverless/dao/IGroupDAO.java
- com.serverless.dao.IGroupDAO
 com/serverless/util/BearerToken.java
  com.serverless.util.BearerToken
-com/serverless/util/HttpUtil.java
- com.serverless.util.HttpUtil
-com/serverless/service/IRoleService.java
- com.serverless.service.IRoleService
-com/serverless/dao/IStudentDAO.java
- com.serverless.dao.IStudentDAO
 com/serverless/service/Impl/GroupService.java
  com.serverless.service.Impl.GroupService
  com.serverless.service.Impl.GroupService$1
-com/serverless/dao/Impl/TeacherDAO.java
- com.serverless.dao.Impl.TeacherDAO
 com/serverless/handler/ExamHandler/DeleteExamHandler.java
  com.serverless.handler.ExamHandler.DeleteExamHandler
-com/serverless/util/JWTUtil.java
- com.serverless.util.JWTUtil
-com/serverless/service/Impl/StudentService.java
- com.serverless.service.Impl.StudentService
- com.serverless.service.Impl.StudentService$1
 com/serverless/handler/GroupHandler/ListGroupHandler.java
  com.serverless.handler.GroupHandler.ListGroupHandler
 com/serverless/service/Impl/CacheService.java
@@ -27,44 +12,140 @@ com/serverless/service/Impl/CacheService.java
 com/serverless/response/ApiGatewayResponse.java
  com.serverless.response.ApiGatewayResponse
  com.serverless.response.ApiGatewayResponse$Builder
-com/serverless/handler/ScoreHandler/ListScoreHandler.java
- com.serverless.handler.ScoreHandler.ListScoreHandler
-com/serverless/dao/Impl/ExamDAO.java
- com.serverless.dao.Impl.ExamDAO
+com/serverless/pojo/UploadS3Pojo.java
+ com.serverless.pojo.UploadS3Pojo
 com/serverless/handler/ScoreHandler/DeleteScoreHandler.java
  com.serverless.handler.ScoreHandler.DeleteScoreHandler
+com/serverless/handler/S3Handler/GetS3Handler.java
+ com.serverless.handler.S3Handler.GetS3Handler
+com/serverless/handler/UserHandler/GetUserByTokenHandler.java
+ com.serverless.handler.UserHandler.GetUserByTokenHandler
 com/serverless/model/Student.java
  com.serverless.model.Student
 com/serverless/handler/ExamHandler/GetExamHandler.java
  com.serverless.handler.ExamHandler.GetExamHandler
 com/serverless/dao/Impl/UserDAO.java
  com.serverless.dao.Impl.UserDAO
-com/serverless/handler/GroupHandler/ListGroupTeacherHandler.java
- com.serverless.handler.GroupHandler.ListGroupTeacherHandler
-com/serverless/model/Subject.java
- com.serverless.model.Subject
-com/serverless/dao/Impl/ScoreDAO.java
- com.serverless.dao.Impl.ScoreDAO
-com/serverless/handler/StudentHandler/CreateStudentHandler.java
- com.serverless.handler.StudentHandler.CreateStudentHandler
-com/serverless/response/Response.java
- com.serverless.response.Response
+com/serverless/handler/GroupHandler/GetGroupByTokenHandler.java
+ com.serverless.handler.GroupHandler.GetGroupByTokenHandler
 com/serverless/handler/ExamHandler/ListExamHandler.java
  com.serverless.handler.ExamHandler.ListExamHandler
 com/serverless/handler/TeacherHandler/CreateTeacherHandler.java
  com.serverless.handler.TeacherHandler.CreateTeacherHandler
-com/serverless/handler/TeacherHandler/DeleteTeacherHandler.java
- com.serverless.handler.TeacherHandler.DeleteTeacherHandler
+com/serverless/handler/S3Handler/DeleteS3Handler.java
+ com.serverless.handler.S3Handler.DeleteS3Handler
 com/serverless/dao/Impl/RoleDAO.java
  com.serverless.dao.Impl.RoleDAO
 com/serverless/handler/ScoreHandler/CreateScoreHandler.java
  com.serverless.handler.ScoreHandler.CreateScoreHandler
 com/serverless/dao/Impl/SubjectDAO.java
  com.serverless.dao.Impl.SubjectDAO
-com/serverless/handler/SubjectHandler/UpdateSubjectHandler.java
- com.serverless.handler.SubjectHandler.UpdateSubjectHandler
 com/serverless/handler/StudentHandler/ListStudentHandler.java
  com.serverless.handler.StudentHandler.ListStudentHandler
+com/serverless/service/IStudentService.java
+ com.serverless.service.IStudentService
+com/serverless/model/User.java
+ com.serverless.model.User
+com/serverless/util/JedisConnection.java
+ com.serverless.util.JedisConnection
+com/serverless/pojo/Base64ImagePojo.java
+ com.serverless.pojo.Base64ImagePojo
+com/serverless/service/Impl/SubjectService.java
+ com.serverless.service.Impl.SubjectService
+ com.serverless.service.Impl.SubjectService$1
+com/serverless/handler/ExamHandler/CreateExamHandler.java
+ com.serverless.handler.ExamHandler.CreateExamHandler
+com/serverless/dao/IS3DAO.java
+ com.serverless.dao.IS3DAO
+com/serverless/handler/S3Handler/CreateS3Handler.java
+ com.serverless.handler.S3Handler.CreateS3Handler
+com/serverless/service/Impl/RoleService.java
+ com.serverless.service.Impl.RoleService
+ com.serverless.service.Impl.RoleService$1
+com/serverless/handler/UserHandler/GetUserHandler.java
+ com.serverless.handler.UserHandler.GetUserHandler
+com/serverless/service/Impl/UserService.java
+ com.serverless.service.Impl.UserService
+ com.serverless.service.Impl.UserService$1
+com/serverless/pojo/TeacherPojo.java
+ com.serverless.pojo.TeacherPojo
+com/serverless/model/Teacher.java
+ com.serverless.model.Teacher
+com/serverless/service/ICacheService.java
+ com.serverless.service.ICacheService
+com/serverless/dao/Impl/S3DAO.java
+ com.serverless.dao.Impl.S3DAO
+com/serverless/handler/GroupHandler/ListGroupStudentHandler.java
+ com.serverless.handler.GroupHandler.ListGroupStudentHandler
+com/serverless/handler/UserHandler/ListUserHandler.java
+ com.serverless.handler.UserHandler.ListUserHandler
+com/serverless/handler/ScoreHandler/GetScoreHandler.java
+ com.serverless.handler.ScoreHandler.GetScoreHandler
+com/serverless/handler/GroupHandler/GetGroupHandler.java
+ com.serverless.handler.GroupHandler.GetGroupHandler
+com/serverless/handler/SubjectHandler/CreateSubjectHandler.java
+ com.serverless.handler.SubjectHandler.CreateSubjectHandler
+com/serverless/handler/RoleHandler/ListRoleHandler.java
+ com.serverless.handler.RoleHandler.ListRoleHandler
+com/serverless/service/IUserService.java
+ com.serverless.service.IUserService
+com/serverless/connection/DynamoDBAdapter.java
+ com.serverless.connection.DynamoDBAdapter
+com/serverless/handler/ExamHandler/UpdateExamHandler.java
+ com.serverless.handler.ExamHandler.UpdateExamHandler
+com/serverless/dao/IScoreDAO.java
+ com.serverless.dao.IScoreDAO
+com/serverless/constant/Constant.java
+ com.serverless.constant.Constant
+com/serverless/service/IScoreService.java
+ com.serverless.service.IScoreService
+com/serverless/handler/StudentHandler/GetStudentHandler.java
+ com.serverless.handler.StudentHandler.GetStudentHandler
+com/serverless/pojo/UserOfStudentPojo.java
+ com.serverless.pojo.UserOfStudentPojo
+com/serverless/dao/ISubjectDAO.java
+ com.serverless.dao.ISubjectDAO
+com/serverless/dao/ITeacherDAO.java
+ com.serverless.dao.ITeacherDAO
+com/serverless/handler/UserHandler/CreateUserHandler.java
+ com.serverless.handler.UserHandler.CreateUserHandler
+com/serverless/dao/Impl/AbstractDAO.java
+ com.serverless.dao.Impl.AbstractDAO
+com/serverless/dao/IRoleDAO.java
+ com.serverless.dao.IRoleDAO
+com/serverless/dao/IGroupDAO.java
+ com.serverless.dao.IGroupDAO
+com/serverless/service/IRoleService.java
+ com.serverless.service.IRoleService
+com/serverless/dao/IStudentDAO.java
+ com.serverless.dao.IStudentDAO
+com/serverless/dao/Impl/TeacherDAO.java
+ com.serverless.dao.Impl.TeacherDAO
+com/serverless/util/JWTUtil.java
+ com.serverless.util.JWTUtil
+com/serverless/service/Impl/StudentService.java
+ com.serverless.service.Impl.StudentService
+ com.serverless.service.Impl.StudentService$1
+com/serverless/handler/ScoreHandler/ListScoreHandler.java
+ com.serverless.handler.ScoreHandler.ListScoreHandler
+com/serverless/dao/Impl/ExamDAO.java
+ com.serverless.dao.Impl.ExamDAO
+com/serverless/handler/GroupHandler/ListGroupTeacherHandler.java
+ com.serverless.handler.GroupHandler.ListGroupTeacherHandler
+com/serverless/pojo/UserOfTeacherPojo.java
+ com.serverless.pojo.UserOfTeacherPojo
+com/serverless/model/Subject.java
+ com.serverless.model.Subject
+com/serverless/dao/Impl/ScoreDAO.java
+ com.serverless.dao.Impl.ScoreDAO
+com/serverless/handler/StudentHandler/CreateStudentHandler.java
+ com.serverless.handler.StudentHandler.CreateStudentHandler
+com/serverless/dao/Impl/CacheDAO.java
+ com.serverless.dao.Impl.CacheDAO
+com/serverless/handler/TeacherHandler/DeleteTeacherHandler.java
+ com.serverless.handler.TeacherHandler.DeleteTeacherHandler
+com/serverless/handler/SubjectHandler/UpdateSubjectHandler.java
+ com.serverless.handler.SubjectHandler.UpdateSubjectHandler
 com/serverless/handler/SubjectHandler/ListSubjectHandler.java
  com.serverless.handler.SubjectHandler.ListSubjectHandler
 com/serverless/service/Impl/ScoreService.java
@@ -75,30 +156,16 @@ com/serverless/service/Impl/TeacherService.java
  com.serverless.service.Impl.TeacherService$1
 com/serverless/dao/IExamDAO.java
  com.serverless.dao.IExamDAO
+com/serverless/handler/S3Handler/UpdateS3Handler.java
+ com.serverless.handler.S3Handler.UpdateS3Handler
 com/serverless/util/HashingUtil.java
  com.serverless.util.HashingUtil
 com/serverless/dao/GenericDAO.java
  com.serverless.dao.GenericDAO
-com/serverless/service/IStudentService.java
- com.serverless.service.IStudentService
-com/serverless/model/User.java
- com.serverless.model.User
 com/serverless/handler/StudentHandler/UpdateStudentHandler.java
  com.serverless.handler.StudentHandler.UpdateStudentHandler
-com/serverless/service/IExamService.java
- com.serverless.service.IExamService
-com/serverless/service/Impl/SubjectService.java
- com.serverless.service.Impl.SubjectService
- com.serverless.service.Impl.SubjectService$1
-com/serverless/handler/ExamHandler/CreateExamHandler.java
- com.serverless.handler.ExamHandler.CreateExamHandler
 com/serverless/service/IGroupService.java
  com.serverless.service.IGroupService
-com/serverless/service/Impl/RoleService.java
- com.serverless.service.Impl.RoleService
- com.serverless.service.Impl.RoleService$1
-com/serverless/handler/UserHandler/GetUserHandler.java
- com.serverless.handler.UserHandler.GetUserHandler
 com/serverless/model/Role.java
  com.serverless.model.Role
 com/serverless/dao/Impl/StudentDAO.java
@@ -108,90 +175,57 @@ com/serverless/handler/GroupHandler/CreateGroupHandler.java
 com/serverless/service/Impl/ExamService.java
  com.serverless.service.Impl.ExamService
  com.serverless.service.Impl.ExamService$1
-com/serverless/service/Impl/UserService.java
- com.serverless.service.Impl.UserService
- com.serverless.service.Impl.UserService$1
 com/serverless/handler/TeacherHandler/GetTeacherTokenHandler.java
  com.serverless.handler.TeacherHandler.GetTeacherTokenHandler
 com/serverless/dao/ICacheDAO.java
  com.serverless.dao.ICacheDAO
 com/serverless/service/ISubjectService.java
  com.serverless.service.ISubjectService
-com/serverless/model/Teacher.java
- com.serverless.model.Teacher
 com/serverless/model/Group.java
  com.serverless.model.Group
-com/serverless/service/ICacheService.java
- com.serverless.service.ICacheService
 com/serverless/util/UpdatableBCrypt.java
  com.serverless.util.UpdatableBCrypt
-com/serverless/handler/GroupHandler/ListGroupStudentHandler.java
- com.serverless.handler.GroupHandler.ListGroupStudentHandler
-com/serverless/handler/UserHandler/ListUserHandler.java
- com.serverless.handler.UserHandler.ListUserHandler
-com/serverless/handler/ScoreHandler/GetScoreHandler.java
- com.serverless.handler.ScoreHandler.GetScoreHandler
 com/serverless/handler/GroupHandler/ListGroupTeacherByIdHandler.java
  com.serverless.handler.GroupHandler.ListGroupTeacherByIdHandler
 com/serverless/dao/Impl/GroupDAO.java
  com.serverless.dao.Impl.GroupDAO
+com/serverless/handler/UserHandler/UpdateUserHandler.java
+ com.serverless.handler.UserHandler.UpdateUserHandler
 com/serverless/service/ITeacherService.java
  com.serverless.service.ITeacherService
 com/serverless/handler/SubjectHandler/DeleteSubjectHandler.java
  com.serverless.handler.SubjectHandler.DeleteSubjectHandler
-com/serverless/handler/SubjectHandler/CreateSubjectHandler.java
- com.serverless.handler.SubjectHandler.CreateSubjectHandler
-com/serverless/handler/RoleHandler/ListRoleHandler.java
- com.serverless.handler.RoleHandler.ListRoleHandler
 com/serverless/handler/TeacherHandler/ListTeacherHandler.java
  com.serverless.handler.TeacherHandler.ListTeacherHandler
 com/serverless/handler/TeacherHandler/UpdateTeacherHandler.java
  com.serverless.handler.TeacherHandler.UpdateTeacherHandler
-com/serverless/service/IUserService.java
- com.serverless.service.IUserService
+com/serverless/service/Impl/S3Service.java
+ com.serverless.service.Impl.S3Service
 com/serverless/response/ApiGatewayRequest.java
  com.serverless.response.ApiGatewayRequest
 com/serverless/handler/ScoreHandler/UpdateScoreHandler.java
  com.serverless.handler.ScoreHandler.UpdateScoreHandler
 com/serverless/handler/StudentHandler/DeleteStudentHandler.java
  com.serverless.handler.StudentHandler.DeleteStudentHandler
-com/serverless/connection/DynamoDBAdapter.java
- com.serverless.connection.DynamoDBAdapter
 com/serverless/handler/UserHandler/LoginUserHandler.java
  com.serverless.handler.UserHandler.LoginUserHandler
 com/serverless/model/Exam.java
  com.serverless.model.Exam
-com/serverless/handler/ExamHandler/UpdateExamHandler.java
- com.serverless.handler.ExamHandler.UpdateExamHandler
 com/serverless/handler/RoleHandler/CreateRoleHandler.java
  com.serverless.handler.RoleHandler.CreateRoleHandler
-com/serverless/dao/IScoreDAO.java
- com.serverless.dao.IScoreDAO
 com/serverless/handler/TeacherHandler/GetTeacherHandler.java
  com.serverless.handler.TeacherHandler.GetTeacherHandler
-com/serverless/constant/Constant.java
- com.serverless.constant.Constant
+com/serverless/pojo/StudentPojo.java
+ com.serverless.pojo.StudentPojo
+com/serverless/service/IS3Service.java
+ com.serverless.service.IS3Service
 com/serverless/dao/IUserDAO.java
  com.serverless.dao.IUserDAO
-com/serverless/service/IScoreService.java
- com.serverless.service.IScoreService
-com/serverless/handler/StudentHandler/GetStudentHandler.java
- com.serverless.handler.StudentHandler.GetStudentHandler
-com/serverless/dao/ISubjectDAO.java
- com.serverless.dao.ISubjectDAO
-com/serverless/dao/ITeacherDAO.java
- com.serverless.dao.ITeacherDAO
-com/serverless/handler/UserHandler/CreateUserHandler.java
- com.serverless.handler.UserHandler.CreateUserHandler
-com/serverless/dao/Impl/AbstractDAO.java
- com.serverless.dao.Impl.AbstractDAO
 com/serverless/model/Score.java
  com.serverless.model.Score
-com/serverless/dao/IRoleDAO.java
- com.serverless.dao.IRoleDAO
 com/serverless/handler/StudentHandler/GetStudentTokenHandler.java
  com.serverless.handler.StudentHandler.GetStudentTokenHandler
-com/serverless/dao/Impl/CacheDAO.java
- com.serverless.dao.Impl.CacheDAO
-com/serverless/util/JedisConnection.java
- com.serverless.util.JedisConnection
+com/serverless/service/IExamService.java
+ com.serverless.service.IExamService
+com/serverless/response/Response.java
+ com.serverless.response.Response

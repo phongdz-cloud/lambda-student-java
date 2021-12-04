@@ -13,6 +13,7 @@ import com.serverless.service.IRoleService;
 import com.serverless.service.IUserService;
 import com.serverless.service.Impl.RoleService;
 import com.serverless.service.Impl.UserService;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -26,15 +27,18 @@ public class CreateUserHandler implements RequestHandler<ApiGatewayRequest, ApiG
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     Response responseBody = null;
     try {
       ObjectMapper mapper = new ObjectMapper();
       Role role = roleService.findRoleByName("user");
-      User user = mapper.readValue((String) input.getBody(), User.class);
+      User user = mapper.readValue( input.getBody(), User.class);
       user.setRole(role);
       if (userService.existsUserByUsername(user.getUsername())) {
         userService.save(user);
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.OK)
             .setObjectBody(user)
             .build();
@@ -48,6 +52,7 @@ public class CreateUserHandler implements RequestHandler<ApiGatewayRequest, ApiG
            input);
     }
     return ApiGatewayResponse.builder()
+        .setHeaders(origin)
         .setStatusCode(Constant.ERROR)
         .setObjectBody(responseBody)
         .build();

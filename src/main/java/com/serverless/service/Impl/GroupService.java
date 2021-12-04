@@ -58,8 +58,18 @@ public class GroupService implements IGroupService {
   }
 
   @Override
+  public List<Group> findAllGroupByStudentOrTeacherById(String id) {
+    return groupDAO.findAllGroupByStudentOrTeacherById(id);
+  }
+
+  @Override
   public String save(Group group) {
     return groupDAO.save(group);
+  }
+
+  @Override
+  public Group findGroupById(String id) {
+    return groupDAO.findGroupById(id);
   }
 }
 

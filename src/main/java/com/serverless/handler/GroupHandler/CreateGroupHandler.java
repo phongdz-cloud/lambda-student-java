@@ -10,6 +10,8 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IGroupService;
 import com.serverless.service.Impl.GroupService;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 
 public class CreateGroupHandler implements RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
@@ -20,12 +22,15 @@ public class CreateGroupHandler implements RequestHandler<ApiGatewayRequest, Api
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper mapper = new ObjectMapper();
       Group group = mapper.readValue(input.getBody(), Group.class);
       groupService.save(group);
       logger.debug("Group saved success!: " + group);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.OK)
           .setObjectBody(group)
           .build();
@@ -34,6 +39,7 @@ public class CreateGroupHandler implements RequestHandler<ApiGatewayRequest, Api
       ex.printStackTrace();
       Response response = new Response("Error in saving Group!",input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

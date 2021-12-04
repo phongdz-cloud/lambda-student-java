@@ -9,6 +9,7 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.ISubjectService;
 import com.serverless.service.Impl.SubjectService;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -21,6 +22,8 @@ public class DeleteSubjectHandler implements RequestHandler<ApiGatewayRequest, A
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       int statusCode;
       String msg;
@@ -38,6 +41,7 @@ public class DeleteSubjectHandler implements RequestHandler<ApiGatewayRequest, A
         msg = "Delete faild!";
       }
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(statusCode)
           .setObjectBody(msg)
           .build();
@@ -46,6 +50,7 @@ public class DeleteSubjectHandler implements RequestHandler<ApiGatewayRequest, A
       logger.error("Error in delete subject!");
       Response response = new Response("Error deleting Subject", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

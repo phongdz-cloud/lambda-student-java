@@ -9,6 +9,7 @@ import com.serverless.response.ApiGatewayResponse;
 import com.serverless.response.Response;
 import com.serverless.service.IScoreService;
 import com.serverless.service.Impl.ScoreService;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -20,6 +21,8 @@ public class DeleteScoreHandler implements RequestHandler<ApiGatewayRequest, Api
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       Map<String, String> pathParameters = input.getPathParameters();
       String id = pathParameters.get("id");
@@ -27,11 +30,13 @@ public class DeleteScoreHandler implements RequestHandler<ApiGatewayRequest, Api
       if (scoreService.delete(score) != null) {
         logger.debug("Delete score by id: " + score.getId());
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.OK)
             .setObjectBody("Delete successfully!")
             .build();
       } else {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.ERROR)
             .setObjectBody("Delete failed!")
             .build();
@@ -42,6 +47,7 @@ public class DeleteScoreHandler implements RequestHandler<ApiGatewayRequest, Api
       e.printStackTrace();
       Response response = new Response("Error in delete Score", input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

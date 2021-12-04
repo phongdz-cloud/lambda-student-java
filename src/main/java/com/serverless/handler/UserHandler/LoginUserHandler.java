@@ -11,6 +11,7 @@ import com.serverless.response.Response;
 import com.serverless.service.IUserService;
 import com.serverless.service.Impl.UserService;
 import com.serverless.util.JWTUtil;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
@@ -21,6 +22,8 @@ public class LoginUserHandler implements RequestHandler<ApiGatewayRequest, ApiGa
 
   @Override
   public ApiGatewayResponse handleRequest(ApiGatewayRequest input, Context context) {
+    Map<String, String> origin = new HashMap<>();
+    origin.put("Access-Control-Allow-Origin", "*");
     try {
       ObjectMapper mapper = new ObjectMapper();
       User user = mapper.readValue(input.getBody(), User.class);
@@ -30,11 +33,13 @@ public class LoginUserHandler implements RequestHandler<ApiGatewayRequest, ApiGa
         responseBody.setToken(
             JWTUtil.createJWT(user.getId(), user.getUsername(), user.getPassword(), 1L));
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.OK)
             .setObjectBody(responseBody)
             .build();
       } else {
         return ApiGatewayResponse.builder()
+            .setHeaders(origin)
             .setStatusCode(Constant.NO_CONTENT)
             .setObjectBody("Login faild!")
             .build();
@@ -43,6 +48,7 @@ public class LoginUserHandler implements RequestHandler<ApiGatewayRequest, ApiGa
       logger.error("Thrown Exception: " + ex.getMessage());
       Response response = new Response("Error login user: ",  input);
       return ApiGatewayResponse.builder()
+          .setHeaders(origin)
           .setStatusCode(Constant.ERROR)
           .setObjectBody(response)
           .build();

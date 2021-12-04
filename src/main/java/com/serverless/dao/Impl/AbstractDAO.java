@@ -89,9 +89,9 @@ public class AbstractDAO<T> implements GenericDAO<T> {
       this.mapper.delete(object);
     } else {
       logger.info("delete(): does not exists!");
-      return object.toString();
+      return null;
     }
-    return null;
+    return object.toString();
   }
 
   private DynamoDBSaveExpression buildExpression(String id) {

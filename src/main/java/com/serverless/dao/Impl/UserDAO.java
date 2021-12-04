@@ -75,6 +75,8 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
         for (User e : users) {
           if (e.getUsername().equals(user.getUsername()) && HashingUtil.verifyAndUpdateHash(
               user.getPassword(), e.getPassword(), e)) {
+            logger.info("password: "+ user.getPassword());
+            user.setId(e.getId());
             user.setPassword(e.getPassword());
             return true;
           }
@@ -89,9 +91,39 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
 
   @Override
   public String save(User user) {
-    user.setPassword(HashingUtil.hash(user.getPassword()));
+    if(user.getId() == null){
+      user.setPassword(HashingUtil.hash(user.getPassword()));
+    }
     logger.info(user.getPassword());
     insert(user);
     return user.getId();
+  }
+
+  @Override
+  public String delete(User user) {
+    try {
+      if (remove(user) != null) {
+        logger.debug("User - get(): User - Delete scucess");
+        return user.getId();
+      } else {
+        logger.info("User - delete failed!");
+      }
+    } catch (Exception ex) {
+      logger.error("User - delete(): Delete error exception!");
+    }
+    return null;
+  }
+
+  @Override
+  public User findUserByUsername(String username) {
+    List<User> users = query();
+    if (users.size() > 0) {
+      for (User user : users) {
+        if (user.getUsername().equals(username)) {
+          return user;
+        }
+      }
+    }
+    return null;
   }
 }
