@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-[![](C:\Users\dell\Downloads\AWS-la-gi-Cac-dich-vu-noi-bat-AWS-cung.png)
+![](https://thoibaonganhang.vn/stores/news_dataimages/canhnq/032021/03/14/4430_0_2ui893KAwAT_F9wz.gif)
 
 <!-- PROJECT LOGO -->
 <br />
