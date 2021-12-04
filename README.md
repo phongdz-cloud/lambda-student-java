@@ -1,6 +1,8 @@
 <div id="top"></div>
 
-![](https://thoibaonganhang.vn/stores/news_dataimages/canhnq/032021/03/14/4430_0_2ui893KAwAT_F9wz.gif)
+<div align="center">
+       <img src="https://thoibaonganhang.vn/stores/news_dataimages/canhnq/032021/03/14/4430_0_2ui893KAwAT_F9wz.gif">
+</div>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -144,7 +146,7 @@ Vì vậy nếu bạn có đề xuất gì để cho dự án này tốt hơn, b
 <!-- CONTACT -->
 ## Contact
 
-Để có thể liên hệ với mình khi gặp khó khăn mình sẽ để thông tin tại đây- [https://www.facebook.com/hohoai.phong.98/](https://twitter.com/your_username) - 19110262@student.hcmute.edu.vn - https://www.facebook.com/profile.php?id=100029562436038 - 19110302@student.hcmute.edu.vn
+Để có thể liên hệ với mình khi gặp khó khăn mình sẽ để thông tin tại đây- [https://www.facebook.com/hohoai.phong.98/](https://www.facebook.com/hohoai.phong.98/) - 19110262@student.hcmute.edu.vn - [https://www.facebook.com/profile.php?id=100029562436038](https://www.facebook.com/profile.php?id=100029562436038) - 19110302@student.hcmute.edu.vn
 
 Project Link: [https://github.com/phongdz-cloud/lambda-student-java](https://github.com/your_username/repo_name)
 
