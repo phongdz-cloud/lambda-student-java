@@ -157,4 +157,4 @@ Project Link: [https://github.com/phongdz-cloud/lambda-student-java](https://git
 <!-- ACKNOWLEDGMENTS -->
 ## Conclusion
 
-Cảm ơn các bạn đã xem tới tận đây nhòm mình chúc các bạn có thể cài đặt được dự án cũng như có thể áp dụng các kiến từ dự án của bọn mình vào dự án của bạn  và mình cũng rất vui nếu bạn góp ý cũng như đóng góp và xây dựng dự án này để có thể giúp ích cho các bạn khóa khác khi học môn này, và em cũng không quên cảm ơn thầy Huỳnh Xuân Phụng đã giúp nhóm em hoàn thành tốt dự án này.
+Cảm ơn các bạn đã xem tới tận đây nhóm mình chúc các bạn có thể cài đặt được dự án cũng như có thể áp dụng các kiến thức từ dự án của bọn mình vào dự án của bạn và mình cũng rất vui nếu bạn góp ý cũng như đóng góp và xây dựng dự án này để có thể giúp ích cho các bạn khóa sau khi học môn này, và em cũng không quên cảm ơn thầy Huỳnh Xuân Phụng đã giúp nhóm em hoàn thành tốt dự án này.
